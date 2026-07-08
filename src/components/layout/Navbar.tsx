@@ -1,3 +1,4 @@
+import { whatsappLink } from "../../data/contact"; 
 function Navbar() {
   return (
     <header className="navbar">
@@ -17,9 +18,14 @@ function Navbar() {
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a className="btn-whatsapp" href="#contacto">
-        Hablemos
-      </a>
+      <a
+       className="btn-whatsapp"
+       href={whatsappLink}
+       target="_blank"
+       rel="noopener noreferrer"
+       >
+      Hablemos
+       </a>
     </header>
   );
 }

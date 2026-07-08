@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 import FadeSection from "../ui/FadeSection";
+import { whatsappLink } from "../../data/contact";
 
 function Contact() {
   return (
@@ -16,9 +17,14 @@ function Contact() {
 
         <br />
 
-        <a className="btn-primary" href="#">
-          Hablemos por WhatsApp
-        </a>
+        <a
+         className="btn-primary"
+         href={whatsappLink}
+         target="_blank"
+         rel="noopener noreferrer"
+         >
+         Hablemos por WhatsApp
+        </a> 
       </div>
     </FadeSection>
   );

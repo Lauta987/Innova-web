@@ -1,5 +1,6 @@
 import { Rocket } from "lucide-react";
 import FadeSection from "../ui/FadeSection";
+import { whatsappLink } from "../../data/contact";
 
 function CTA() {
   return (
@@ -14,9 +15,14 @@ function CTA() {
           páginas web, sistemas a medida y automatizaciones para tu negocio.
         </p>
 
-        <a className="btn-primary" href="#contacto">
-          Hablemos de tu proyecto
-        </a>
+        <a
+       className="btn-primary"
+       href={whatsappLink}
+       target="_blank"
+       rel="noopener noreferrer"
+       >
+       Hablemos de tu proyecto
+      </a>
       </div>
 
       <div className="cta-visual">
