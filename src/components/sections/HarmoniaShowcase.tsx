@@ -7,8 +7,12 @@ type HarmoniaShowcaseProps = {
 
 type CarouselName = "web" | "admin" | "app";
 
-const webImages = ["/images/harmonia-web.png", "/images/harmonia-web-2.png"];
-
+const webImages = [
+  "/images/harmonia-web.png",
+  "/images/harmonia-web-2.png",
+  "/images/harmonia-carrito.png",
+];
+ 
 const adminImages = [
   "/images/harmonia-admin-login.png",
   "/images/harmonia-admin-panel.png",
