@@ -1,10 +1,4 @@
-import {
-  Code2,
-  Globe,
-  Headphones,
-  Settings,
-  ArrowRight,
-} from "lucide-react";
+import { Code2, Globe, Headphones, Settings } from "lucide-react"; 
 
 import FadeSection from "../ui/FadeSection";
 
@@ -62,8 +56,6 @@ function Services() {
 
                 <p>{service.text}</p>
               </div>
-
-              <ArrowRight className="service-arrow" size={20} />
             </article>
           ))}
         </div>

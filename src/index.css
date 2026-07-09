@@ -1440,18 +1440,6 @@ nav a:hover {
   z-index: 1;
 }
 
-.service-arrow {
-  color: #ff334f;
-  align-self: flex-end;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-arrow {
-  transform: translateX(6px);
-}
-
 @media (max-width: 950px) {
   .services-layout {
     grid-template-columns: 1fr;
