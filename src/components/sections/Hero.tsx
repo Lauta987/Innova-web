@@ -1,5 +1,6 @@
 import { BarChart3, Code2, Settings, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import HeroParticles from "../ui/HeroParticles";
 
 function Hero() {
   return (
@@ -9,6 +10,8 @@ function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
     >
+      <HeroParticles />
+
       <div className="hero-bg-lines">
         <span></span>
         <span></span>

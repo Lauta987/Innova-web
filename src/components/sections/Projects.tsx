@@ -1,5 +1,6 @@
 import FadeSection from "../ui/FadeSection";
 import HarmoniaShowcase from "./HarmoniaShowcase";
+import GymStartShowcase from "./GymStartShowcase";
 
 type ProjectsProps = {
   setSelectedImage: (image: string) => void;
@@ -27,6 +28,19 @@ function Projects({ setSelectedImage }: ProjectsProps) {
       </div>
 
       <button className="btn-primary">Ver proyecto</button>
+
+      <div className="project-divider"></div>
+
+      <span className="eyebrow">OTRO PROYECTO</span>
+
+      <h2>GymStart</h2>
+
+      <p className="projects-description">
+        SaaS para gimnasios con experiencia premium para alumnos y herramientas
+        de gestión para administradores.
+      </p>
+
+      <GymStartShowcase setSelectedImage={setSelectedImage} />
     </FadeSection>
   );
 }

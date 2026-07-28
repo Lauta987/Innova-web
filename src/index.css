@@ -1740,3 +1740,304 @@ nav a:hover {
   width: 7px;
   height: 7px;
 } 
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #ff334f;
+  box-shadow: 0 0 18px rgba(255, 51, 79, 0.9);
+  opacity: 0.45;
+}
+
+.hero-content,
+.hero-tech-card,
+.scroll-indicator {
+  position: relative;
+  z-index: 2;
+} 
+.project-divider {
+  width: 100%;
+  height: 1px;
+  margin: 5rem 0 3rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 51, 79, 0.35),
+    transparent
+  );
+}
+.gymstart-showcase {
+  width: 100%;
+  max-width: none;
+  margin: 4rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.gymstart-main {
+  width: min(1320px, calc(100vw - 80px));
+  display: grid;
+  grid-template-columns: 430px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Card izquierda y derecha */
+.gymstart-student-panel,
+.gymstart-admin-side {
+  min-width: 0;
+  border-radius: 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.065),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 51, 79, 0.2);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.38),
+    0 0 45px rgba(255, 51, 79, 0.08);
+}
+
+.gymstart-student-panel {
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gymstart-admin-side {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headers */
+.gymstart-view-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.gymstart-view-header span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.gymstart-view-header small {
+  color: #ff334f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.52rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 51, 79, 0.08);
+  border: 1px solid rgba(255, 51, 79, 0.22);
+}
+
+.gymstart-admin-header {
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Carruseles base */
+.gymstart-carousel {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gymstart-carousel img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.gymstart-carousel:hover img {
+  transform: scale(1.006);
+}
+
+.gymstart-carousel .carousel-btn {
+  opacity: 0;
+}
+
+.gymstart-carousel:hover .carousel-btn {
+  opacity: 1;
+}
+
+/* Vista alumno */
+.student-carousel {
+  width: min(315px, 100%);
+  margin: 0 auto;
+  border-radius: 36px;
+  padding: 0.5rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.045)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(255, 51, 79, 0.08);
+}
+
+.student-carousel img {
+  width: 100%;
+  height: auto;
+  max-height: 610px;
+  object-fit: contain;
+  border-radius: 30px;
+  background: #fff;
+}
+
+.gymstart-student-panel > p {
+  max-width: 330px;
+  margin: 1.6rem auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* Texto principal */
+.gymstart-copy {
+  max-width: 920px;
+  text-align: left;
+  margin-bottom: 1.35rem;
+}
+
+.gymstart-copy h3 {
+  color: #fff;
+  font-size: clamp(3rem, 4.8vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  margin-bottom: 1.25rem;
+}
+
+.gymstart-copy h3 span {
+  color: #ff334f;
+}
+
+.gymstart-mini-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+}
+
+.gymstart-mini-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+}
+
+.gymstart-mini-tags svg {
+  color: #ff334f;
+}
+
+/* Admin grande y bien encuadrado */
+.admin-carousel {
+  border-radius: 26px;
+  padding: 0.6rem;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-carousel img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.gymstart-admin-text {
+  max-width: 760px;
+  margin: 1.2rem auto 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .gymstart-main {
+    grid-template-columns: 380px minmax(0, 1fr);
+  }
+
+  .gymstart-copy h3 {
+    font-size: clamp(2.7rem, 4.5vw, 4.4rem);
+  }
+}
+
+@media (max-width: 980px) {
+  .gymstart-main {
+    width: min(900px, calc(100vw - 40px));
+    grid-template-columns: 1fr;
+  }
+
+  .gymstart-admin-side,
+  .gymstart-copy {
+    text-align: center;
+  }
+
+  .gymstart-mini-tags {
+    justify-content: center;
+  }
+
+  .gymstart-admin-header {
+    margin-top: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .gymstart-main {
+    width: min(100%, calc(100vw - 24px));
+    gap: 1.3rem;
+  }
+
+  .gymstart-student-panel,
+  .gymstart-admin-side {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .gymstart-view-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .student-carousel {
+    width: min(265px, 100%);
+  }
+
+  .gymstart-copy h3 {
+    font-size: 2.7rem;
+  }
+
+  .gymstart-mini-tags {
+    gap: 0.8rem;
+  }
+} 
