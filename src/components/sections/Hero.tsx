@@ -1,4 +1,9 @@
-import { BarChart3, Code2, Settings, ShieldCheck } from "lucide-react";
+import {
+  Code2,
+  PencilRuler,
+  SlidersHorizontal,
+  Target,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import HeroParticles from "../ui/HeroParticles";
 
@@ -43,33 +48,54 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-tech-card">
-        <div className="code-box">
-          <Code2 size={82} />
+      <div className="hero-orbit-system">
+        <div className="orbit orbit-1"></div>
+        <div className="orbit orbit-2"></div>
+        <div className="orbit orbit-3"></div>
+        <div className="orbit orbit-4"></div>
+
+        <div className="hero-orbit-core">
+          <h3>INNOVA</h3>
+          <span>MÉTODO</span>
         </div>
 
-        <h3>Soluciones que impulsan</h3>
-
-        <p>
-          Desarrollamos tecnología a medida para llevar tu negocio más lejos.
-        </p>
-
-        <div className="hero-features">
-          <div>
-            <Settings size={22} />
-            <span>A medida</span>
-          </div>
-
-          <div>
-            <BarChart3 size={22} />
-            <span>Escalable</span>
-          </div>
-
-          <div>
-            <ShieldCheck size={22} />
-            <span>Confiable</span>
+        <div className="orbit-label-track orbit-label-track-1">
+          <div className="orbit-tag orbit-tag-1">
+            <Target size={22} />
+            <span>Estrategia</span>
+            <i></i>
           </div>
         </div>
+
+        <div className="orbit-label-track orbit-label-track-2">
+          <div className="orbit-tag orbit-tag-2">
+            <PencilRuler size={22} />
+            <span>Diseño</span>
+            <i></i>
+          </div>
+        </div>
+
+        <div className="orbit-label-track orbit-label-track-3">
+          <div className="orbit-tag orbit-tag-3">
+            <Code2 size={22} />
+            <span>Desarrollo</span>
+            <i></i>
+          </div>
+        </div>
+
+        <div className="orbit-label-track orbit-label-track-4">
+          <div className="orbit-tag orbit-tag-4">
+            <SlidersHorizontal size={22} />
+            <span>Personalización</span>
+            <i></i>
+          </div>
+        </div>
+
+        <span className="orbit-dot orbit-dot-1"></span>
+        <span className="orbit-dot orbit-dot-2"></span>
+        <span className="orbit-dot orbit-dot-3"></span>
+        <span className="orbit-dot orbit-dot-4"></span>
+        <span className="orbit-dot orbit-dot-5"></span>
       </div>
 
       <div className="scroll-indicator">↓</div>

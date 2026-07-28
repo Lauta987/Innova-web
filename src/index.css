@@ -248,117 +248,314 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-.hero-tech-card {
+/* HERO - MÉTODO INNOVA */
+
+.hero-orbit-system {
   position: relative;
   z-index: 2;
-  width: min(390px, 100%);
-  justify-self: center;
-  padding: 2.4rem 2rem 2rem;
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 50% 8%, rgba(255, 51, 79, 0.2), transparent 34%),
-    rgba(8, 11, 18, 0.72);
-  border: 1px solid rgba(255, 51, 79, 0.45);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 35px 90px rgba(0, 0, 0, 0.55),
-    0 0 45px rgba(255, 51, 79, 0.18);
-  backdrop-filter: blur(18px);
-  overflow: hidden;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
 }
 
-.hero-tech-card::before {
-  content: "";
+.hero-orbit-core {
+  width: 230px;
+  height: 230px;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(35, 35, 35, 0.95),
+    rgba(10, 10, 14, 0.98)
+  );
+  border: 2px solid rgba(255, 51, 79, 0.75);
+  box-shadow:
+    0 0 0 8px rgba(255, 51, 79, 0.05),
+    0 0 40px rgba(255, 51, 79, 0.2),
+    0 0 90px rgba(255, 51, 79, 0.15);
+  position: relative;
+  z-index: 4;
+  animation: corePulse 4.5s ease-in-out infinite;
+}
+
+.hero-orbit-core h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.hero-orbit-core span {
+  margin-top: 0.35rem;
+  color: #ff334f;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+}
+
+.orbit {
   position: absolute;
-  inset: -35%;
-  background: radial-gradient(circle, rgba(255, 51, 79, 0.24), transparent 55%);
-  animation: heroGlow 5s ease-in-out infinite alternate;
+  left: 50%;
+  top: 50%;
+  border: 1.5px solid rgba(255, 51, 79, 0.18);
+  border-radius: 999px;
+  z-index: 1;
   pointer-events: none;
 }
 
-.hero-tech-card::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 3px;
-  left: 50%;
-  bottom: -1px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, #ff334f, transparent);
-  box-shadow: 0 0 25px rgba(255, 51, 79, 0.9);
+.orbit-1 {
+  width: 600px;
+  height: 320px;
+  transform: translate(-50%, -50%) rotate(18deg);
+  animation: orbitRotateOne 32s linear infinite;
 }
 
-.code-box {
-  position: relative;
-  z-index: 2;
-  width: 128px;
-  height: 128px;
-  margin: 0 auto 2.2rem;
-  border-radius: 28px;
-  display: grid;
-  place-items: center;
-  color: #ff334f;
-  background: rgba(255, 51, 79, 0.1);
+.orbit-2 {
+  width: 580px;
+  height: 360px;
+  transform: translate(-50%, -50%) rotate(-24deg);
+  animation: orbitRotateTwo 38s linear infinite;
+}
+
+.orbit-3 {
+  width: 610px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(52deg);
+  animation: orbitRotateThree 44s linear infinite;
+}
+
+.orbit-4 {
+  width: 520px;
+  height: 420px;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  animation: orbitRotateFour 50s linear infinite;
+}
+
+.orbit-label-track {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  z-index: 5;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+.orbit-label-track-1 {
+  width: 600px;
+  height: 320px;
+  animation: tagOrbitOne 32s linear infinite;
+}
+
+.orbit-label-track-2 {
+  width: 580px;
+  height: 360px;
+  animation: tagOrbitTwo 38s linear infinite;
+}
+
+.orbit-label-track-3 {
+  width: 610px;
+  height: 300px;
+  animation: tagOrbitThree 44s linear infinite;
+}
+
+.orbit-label-track-4 {
+  width: 520px;
+  height: 420px;
+  animation: tagOrbitFour 50s linear infinite;
+}
+
+.orbit-tag {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 24, 0.85);
   border: 1px solid rgba(255, 51, 79, 0.35);
   box-shadow:
-    inset 0 0 28px rgba(255, 51, 79, 0.08),
-    0 0 36px rgba(255, 51, 79, 0.2);
+    0 10px 35px rgba(0, 0, 0, 0.32),
+    0 0 30px rgba(255, 51, 79, 0.08);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
 }
 
-.code-box::before,
-.code-box::after {
-  content: "";
+.orbit-tag-1 {
+  animation: keepTagStraightOne 32s linear infinite;
+}
+
+.orbit-tag-2 {
+  animation: keepTagStraightTwo 38s linear infinite;
+}
+
+.orbit-tag-3 {
+  animation: keepTagStraightThree 44s linear infinite;
+}
+
+.orbit-tag-4 {
+  animation: keepTagStraightFour 50s linear infinite;
+}
+
+.orbit-tag svg {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.orbit-tag i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff334f;
+  box-shadow: 0 0 14px rgba(255, 51, 79, 0.9);
+  display: block;
+  flex-shrink: 0;
+}
+
+.orbit-dot {
   position: absolute;
-  inset: -42px;
-  border: 1px solid rgba(255, 51, 79, 0.16);
-  border-radius: 50%;
-}
-
-.code-box::after {
-  inset: -80px;
-  opacity: 0.55;
-}
-
-.hero-tech-card h3 {
-  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
   z-index: 2;
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  animation: orbitDotPulse 2.8s ease-in-out infinite;
 }
 
-.hero-tech-card p {
-  position: relative;
-  z-index: 2;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.65;
-  margin-bottom: 1.8rem;
+.orbit-dot-1 {
+  top: 135px;
+  right: 82px;
+  background: #ff334f;
+  box-shadow: 0 0 18px rgba(255, 51, 79, 0.95);
 }
 
-.hero-features {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.9rem;
+.orbit-dot-2 {
+  top: 300px;
+  left: 42px;
+  animation-delay: 0.4s;
 }
 
-.hero-features div {
-  display: grid;
-  place-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.78rem;
+.orbit-dot-3 {
+  bottom: 56px;
+  left: 170px;
+  animation-delay: 0.8s;
 }
 
-.hero-features svg {
-  color: #ff334f;
-  padding: 0.45rem;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 51, 79, 0.32);
-  background: rgba(255, 51, 79, 0.09);
+.orbit-dot-4 {
+  bottom: 104px;
+  right: 52px;
+  background: #ff334f;
+  box-shadow: 0 0 18px rgba(255, 51, 79, 0.95);
+  animation-delay: 1.2s;
+}
+
+.orbit-dot-5 {
+  top: 72px;
+  left: 170px;
+  animation-delay: 1.6s;
+}
+
+@keyframes orbitRotateOne {
+  from { transform: translate(-50%, -50%) rotate(18deg); }
+  to { transform: translate(-50%, -50%) rotate(378deg); }
+}
+
+@keyframes orbitRotateTwo {
+  from { transform: translate(-50%, -50%) rotate(-24deg); }
+  to { transform: translate(-50%, -50%) rotate(-384deg); }
+}
+
+@keyframes orbitRotateThree {
+  from { transform: translate(-50%, -50%) rotate(52deg); }
+  to { transform: translate(-50%, -50%) rotate(412deg); }
+}
+
+@keyframes orbitRotateFour {
+  from { transform: translate(-50%, -50%) rotate(-8deg); }
+  to { transform: translate(-50%, -50%) rotate(-368deg); }
+}
+
+@keyframes tagOrbitOne {
+  from { transform: translate(-50%, -50%) rotate(18deg); }
+  to { transform: translate(-50%, -50%) rotate(378deg); }
+}
+
+@keyframes tagOrbitTwo {
+  from { transform: translate(-50%, -50%) rotate(-24deg); }
+  to { transform: translate(-50%, -50%) rotate(-384deg); }
+}
+
+@keyframes tagOrbitThree {
+  from { transform: translate(-50%, -50%) rotate(52deg); }
+  to { transform: translate(-50%, -50%) rotate(412deg); }
+}
+
+@keyframes tagOrbitFour {
+  from { transform: translate(-50%, -50%) rotate(-8deg); }
+  to { transform: translate(-50%, -50%) rotate(-368deg); }
+}
+
+@keyframes keepTagStraightOne {
+  from { transform: translate(-50%, -50%) rotate(-18deg); }
+  to { transform: translate(-50%, -50%) rotate(-378deg); }
+}
+
+@keyframes keepTagStraightTwo {
+  from { transform: translate(-50%, -50%) rotate(24deg); }
+  to { transform: translate(-50%, -50%) rotate(384deg); }
+}
+
+@keyframes keepTagStraightThree {
+  from { transform: translate(-50%, -50%) rotate(-52deg); }
+  to { transform: translate(-50%, -50%) rotate(-412deg); }
+}
+
+@keyframes keepTagStraightFour {
+  from { transform: translate(-50%, -50%) rotate(8deg); }
+  to { transform: translate(-50%, -50%) rotate(368deg); }
+}
+
+@keyframes orbitDotPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 10px rgba(255, 51, 79, 0.45);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 22px rgba(255, 51, 79, 0.95);
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 8px rgba(255, 51, 79, 0.05),
+      0 0 40px rgba(255, 51, 79, 0.2),
+      0 0 90px rgba(255, 51, 79, 0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 12px rgba(255, 51, 79, 0.08),
+      0 0 55px rgba(255, 51, 79, 0.32),
+      0 0 120px rgba(255, 51, 79, 0.22);
+  }
 }
 
 .scroll-indicator {
@@ -418,8 +615,11 @@ nav a:hover {
     gap: 3rem;
   }
 
-  .hero-tech-card {
-    justify-self: start;
+  .hero-orbit-system {
+    justify-self: center;
+    min-height: 560px;
+    transform: scale(0.9);
+    transform-origin: center;
   }
 
   .hero::after {
@@ -445,17 +645,28 @@ nav a:hover {
     font-size: 1rem;
   }
 
-  .hero-tech-card {
-    width: 100%;
-    padding: 2rem 1.3rem;
+  .hero-orbit-system {
+    min-height: 390px;
+    transform: scale(0.62);
+    transform-origin: center;
   }
 
-  .hero-features {
-    gap: 0.5rem;
+  .orbit-tag {
+    font-size: 0.86rem;
+    padding: 0.75rem 0.95rem;
   }
 
-  .hero-features div {
-    font-size: 0.7rem;
+  .hero-orbit-core {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-orbit-core h3 {
+    font-size: 2.4rem;
+  }
+
+  .hero-orbit-core span {
+    font-size: 0.85rem;
   }
 } 
 
@@ -1146,17 +1357,11 @@ nav a:hover {
     padding: 50px 0;
   }
 
-  .hero-tech-card {
+  .hero-orbit-system {
     margin-top: 40px;
-  }
-
-  .circle-2 {
-    width: 250px;
-    height: 250px;
-  }
-
-  .hero-tech-right h3 {
-    font-size: 32px;
+    min-height: 500px;
+    transform: scale(0.78);
+    transform-origin: center;
   }
 
   .cards {
@@ -1759,7 +1964,7 @@ nav a:hover {
 }
 
 .hero-content,
-.hero-tech-card,
+.hero-orbit-system,
 .scroll-indicator {
   position: relative;
   z-index: 2;
@@ -2040,4 +2245,4 @@ nav a:hover {
   .gymstart-mini-tags {
     gap: 0.8rem;
   }
-} 
+}  
