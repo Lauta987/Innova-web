@@ -2246,3 +2246,611 @@ nav a:hover {
     gap: 0.8rem;
   }
 }  
+/* =========================================================
+   PROYECTOS — CARRUSEL EN ABANICO
+   Pegá este bloque al final de tu CSS actual.
+   ========================================================= */
+
+#proyectos {
+  position: relative;
+  isolation: isolate;
+}
+
+#proyectos::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: min(1450px, 120vw);
+  height: 760px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 46%,
+      rgba(200, 16, 46, 0.18),
+      rgba(200, 16, 46, 0.05) 34%,
+      transparent 68%
+    );
+  pointer-events: none;
+}
+
+#proyectos::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(1380px, 116vw);
+  height: 520px;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 51, 79, 0.1);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+
+.projects-fan-intro {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section .projects-fan-intro h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.45rem, 5vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.projects-fan-intro h2 span {
+  color: #ff334f;
+}
+
+.projects-fan-intro > p {
+  max-width: 650px;
+  margin: 1.4rem auto 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.project-fan-shell {
+  width: min(1480px, calc(100vw - 20px));
+  margin-top: 2.75rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.project-stack-stage {
+  position: relative;
+  height: 570px;
+  outline: none;
+  perspective: 1400px;
+  perspective-origin: 50% 42%;
+}
+
+.project-stack-stage:focus-visible {
+  outline: 1px solid rgba(255, 51, 79, 0.55);
+  outline-offset: 5px;
+  border-radius: 28px;
+}
+
+.project-stack-stage::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: min(820px, 70%);
+  height: 70px;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.project-fan-card {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  translate: -50% 0;
+  transform-style: preserve-3d;
+  transform-origin: 50% 100%;
+  cursor: pointer;
+  user-select: none;
+  will-change: transform, filter, opacity;
+}
+
+.project-fan-card.is-active {
+  cursor: grab;
+}
+
+.project-fan-card.is-active:active {
+  cursor: grabbing;
+}
+
+.project-fan-card-surface {
+  --project-accent: #ff334f;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid color-mix(in srgb, var(--project-accent), white 18%);
+  border-radius: 26px;
+  background: #0b0e14;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent), transparent 88%),
+      rgba(10, 12, 17, 0.98) 42%
+    ),
+    #0b0e14;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.6),
+    0 0 40px color-mix(in srgb, var(--project-accent), transparent 82%);
+  backface-visibility: hidden;
+}
+
+.project-fan-card.is-active .project-fan-card-surface {
+  box-shadow:
+    0 38px 110px rgba(0, 0, 0, 0.72),
+    0 0 52px color-mix(in srgb, var(--project-accent), transparent 76%);
+}
+
+.project-fan-card-header {
+  min-height: 78px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.project-fan-identity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.project-fan-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border: 1px solid
+    color-mix(in srgb, var(--project-accent), white 18%);
+  border-radius: 13px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent), white 12%),
+      color-mix(in srgb, var(--project-accent), black 25%)
+    );
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--project-accent), transparent 70%);
+}
+
+.project-fan-identity > div {
+  min-width: 0;
+}
+
+.project-fan-identity h3 {
+  margin: 0 0 0.28rem;
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.45rem;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-fan-status {
+  display: inline-flex;
+  padding: 0.28rem 0.55rem;
+  color: color-mix(in srgb, var(--project-accent), white 35%);
+  border: 1px solid
+    color-mix(in srgb, var(--project-accent), transparent 58%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--project-accent), transparent 86%);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.project-fan-media {
+  position: relative;
+  min-height: 0;
+  flex: 1 1 auto;
+  margin: 0 1.15rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      color-mix(in srgb, var(--project-accent), transparent 83%),
+      transparent 55%
+    ),
+    #090c11;
+}
+
+.project-fan-media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.34));
+  pointer-events: none;
+}
+
+.project-fan-media > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.project-fan-card-content {
+  padding: 0.95rem 1.2rem 1.15rem;
+}
+
+.project-fan-card-content > p {
+  min-height: 2.7em;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.project-fan-tags {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.project-fan-tags span {
+  padding: 0.31rem 0.55rem;
+  color: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.67rem;
+}
+
+.project-fan-cta {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.08rem;
+  min-height: 38px;
+  padding: 0.55rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--project-accent), white 8%),
+      color-mix(in srgb, var(--project-accent), black 14%)
+    );
+  box-shadow: 0 10px 24px
+    color-mix(in srgb, var(--project-accent), transparent 72%);
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.project-fan-cta:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.project-fan-card-content:has(.project-fan-cta) {
+  padding-right: 10.5rem;
+}
+
+.project-fan-card-surface.is-coming-soon {
+  border-style: dashed;
+}
+
+.project-fan-card-surface.is-coming-soon .project-fan-media {
+  border-style: dashed;
+}
+
+.project-fan-fallback {
+  position: relative;
+  width: 88%;
+  height: 82%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.32);
+}
+
+.project-fan-fallback > strong {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.fallback-browser-bar {
+  height: 25px;
+  padding-left: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fallback-browser-bar span {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--project-accent), white 12%);
+}
+
+.fallback-dashboard {
+  height: calc(100% - 25px);
+  display: grid;
+  grid-template-columns: 22% 1fr;
+}
+
+.fallback-dashboard aside {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  color: var(--project-accent);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.fallback-dashboard aside span {
+  width: 90%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fallback-content {
+  padding: 0.8rem;
+}
+
+.fallback-metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+}
+
+.fallback-metric-row span {
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.fallback-chart {
+  position: relative;
+  height: 43%;
+  margin-top: 0.7rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 30%,
+      color-mix(in srgb, var(--project-accent), transparent 58%) 31% 33%,
+      transparent 34% 45%,
+      color-mix(in srgb, var(--project-accent), transparent 58%) 46% 48%,
+      transparent 49%
+    );
+}
+
+.fallback-lines {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.fallback-lines span {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.fallback-lines span:nth-child(2) {
+  width: 78%;
+}
+
+.fallback-lines span:nth-child(3) {
+  width: 62%;
+}
+
+.project-fan-navigation {
+  position: relative;
+  z-index: 30;
+  margin-top: -0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+}
+
+.project-fan-arrow {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(11, 12, 16, 0.72);
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-fan-arrow:hover {
+  color: #fff;
+  border-color: #ff334f;
+  background: rgba(255, 51, 79, 0.16);
+  transform: scale(1.05);
+}
+
+.project-fan-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.58rem;
+}
+
+.project-fan-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-fan-dots button.is-active {
+  width: 25px;
+  background: #ff334f;
+  box-shadow: 0 0 16px rgba(255, 51, 79, 0.55);
+}
+
+.project-fan-help {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  #proyectos::before {
+    height: 670px;
+  }
+
+  .project-fan-shell {
+    margin-top: 2.2rem;
+  }
+
+  .project-stack-stage {
+    height: 530px;
+  }
+}
+
+@media (max-width: 560px) {
+  #proyectos::before {
+    top: 120px;
+    height: 650px;
+  }
+
+  #proyectos::after {
+    top: 310px;
+  }
+
+  .section .projects-fan-intro h2 {
+    font-size: 2.3rem;
+  }
+
+  .projects-fan-intro > p {
+    font-size: 0.95rem;
+  }
+
+  .project-fan-shell {
+    width: 100vw;
+    margin-top: 1.8rem;
+  }
+
+  .project-stack-stage {
+    height: 550px;
+  }
+
+  .project-fan-card {
+    bottom: 26px;
+  }
+
+  .project-fan-card-header {
+    min-height: 72px;
+    padding: 0.9rem 1rem;
+  }
+
+  .project-fan-identity h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-fan-media {
+    margin: 0 0.9rem;
+  }
+
+  .project-fan-card-content {
+    padding: 0.85rem 1rem 1rem;
+  }
+
+  .project-fan-card-content:has(.project-fan-cta) {
+    padding-right: 1rem;
+    padding-bottom: 4.4rem;
+  }
+
+  .project-fan-cta {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .project-fan-card-content > p {
+    min-height: auto;
+    font-size: 0.82rem;
+  }
+
+  .project-fan-tags {
+    margin-top: 0.55rem;
+  }
+
+  .project-fan-help {
+    padding: 0 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-fan-arrow,
+  .project-fan-dots button,
+  .project-fan-cta {
+    transition: none;
+  }
+}
+  
