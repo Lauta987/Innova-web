@@ -103,7 +103,7 @@ const projects: ProjectCardStackItem[] = [
     description:
       "Una experiencia premium para alumnos y herramientas simples para administrar rutinas y progreso.",
     status: "SAAS PARA GIMNASIOS",
-    imageSrc: "/projects/gymstart-cover.webp",
+    imageSrc: "/projects/gymstart-card.webp",
     imageAlt: "Aplicación de alumnos y panel administrativo de GymStart",
     href: "#contacto",
     ctaLabel: "Solicitar una demo",
@@ -113,8 +113,8 @@ const projects: ProjectCardStackItem[] = [
     gallery: [
       {
         src: "/projects/gymstart-cover.webp",
-        alt: "Vista general de GymStart",
-        label: "Vista general",
+        alt: "Aplicación móvil de GymStart para alumnos",
+        label: "Vista móvil",
       },
       {
         src: "/projects/gymstart-alumno.webp",
@@ -194,7 +194,7 @@ const projects: ProjectCardStackItem[] = [
     id: "proximamente",
     title: "Próximo sistema",
     description:
-      "Nuevas soluciones digitales pensadas para problemas concretos de negocios reales.",
+      "Nuevas herramientas pensadas para mejorar procesos y experiencias en negocios reales.",
     status: "PRÓXIMAMENTE",
     tags: ["Nuevo producto", "Innova"],
     accent: "#ff334f",
@@ -230,5 +230,4 @@ function Projects() {
   );
 }
 
-export default Projects;
- 
+export default Projects; 
