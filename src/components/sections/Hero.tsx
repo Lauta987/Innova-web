@@ -10,7 +10,6 @@ import HeroParticles from "../ui/HeroParticles";
 function Hero() {
   return (
     <motion.section
-      id="inicio"
       className="hero"
       initial={{ opacity: 0, y: 45 }}
       animate={{ opacity: 1, y: 0 }}
@@ -61,34 +60,42 @@ function Hero() {
         </div>
 
         <div className="orbit-label-track orbit-label-track-1">
-          <div className="orbit-tag orbit-tag-1">
-            <Target size={22} />
-            <span>Estrategia</span>
-            <i></i>
+          <div className="orbit-tag-orbiter orbit-tag-orbiter-1">
+            <div className="orbit-tag orbit-tag-1">
+              <Target size={22} />
+              <span>Estrategia</span>
+              <i></i>
+            </div>
           </div>
         </div>
 
         <div className="orbit-label-track orbit-label-track-2">
-          <div className="orbit-tag orbit-tag-2">
-            <PencilRuler size={22} />
-            <span>Diseño</span>
-            <i></i>
+          <div className="orbit-tag-orbiter orbit-tag-orbiter-2">
+            <div className="orbit-tag orbit-tag-2">
+              <PencilRuler size={22} />
+              <span>Diseño</span>
+              <i></i>
+            </div>
           </div>
         </div>
 
         <div className="orbit-label-track orbit-label-track-3">
-          <div className="orbit-tag orbit-tag-3">
-            <Code2 size={22} />
-            <span>Desarrollo</span>
-            <i></i>
+          <div className="orbit-tag-orbiter orbit-tag-orbiter-3">
+            <div className="orbit-tag orbit-tag-3">
+              <Code2 size={22} />
+              <span>Desarrollo</span>
+              <i></i>
+            </div>
           </div>
         </div>
 
         <div className="orbit-label-track orbit-label-track-4">
-          <div className="orbit-tag orbit-tag-4">
-            <SlidersHorizontal size={22} />
-            <span>Personalización</span>
-            <i></i>
+          <div className="orbit-tag-orbiter orbit-tag-orbiter-4">
+            <div className="orbit-tag orbit-tag-4">
+              <SlidersHorizontal size={22} />
+              <span>Personalización</span>
+              <i></i>
+            </div>
           </div>
         </div>
 
