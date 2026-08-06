@@ -55,8 +55,13 @@ function Hero() {
         <div className="orbit orbit-4"></div>
 
         <div className="hero-orbit-core">
-          <h3>INNOVA</h3>
-          <span>MÉTODO</span>
+          <div className="innova-logo-orbit">
+            <img
+              className="innova-core-logo"
+              src="/innova-symbol.svg"
+              alt="Logo Innova"
+            />
+          </div>
         </div>
 
         <div className="orbit-label-track orbit-label-track-1">

@@ -3556,3 +3556,412 @@ body {
     animation: none !important;
   }
 } 
+/* =========================================================
+   HERO CENTRO — LOGO SIN FONDO + ARCOS ROJOS
+   Bloque final corregido para reemplazar INNOVA/MÉTODO por SVG
+   ========================================================= */
+
+.hero-orbit-core {
+  position: relative;
+  z-index: 7;
+  width: 230px;
+  height: 230px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  overflow: visible;
+  animation: none !important;
+}
+
+.hero-orbit-core h3,
+.hero-orbit-core > span,
+.innova-symbol,
+.symbol-left,
+.symbol-right {
+  display: none !important;
+}
+
+.innova-core-logo {
+  position: relative;
+  z-index: 5;
+  width: 138px;
+  height: 138px;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 0 18px rgba(255, 51, 79, 0.44))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.14));
+}
+
+/* Arcos rojos alrededor del logo */
+.hero-core-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 3;
+  border: none !important;
+  filter: none !important;
+}
+
+/* Arco exterior */
+.hero-core-ring-1 {
+  width: 245px;
+  height: 245px;
+  inset: auto !important;
+  transform: translate(-50%, -50%);
+  animation: coreArcRotateOne 9s linear infinite;
+}
+
+.hero-core-ring-1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 14deg,
+    #ff334f 15deg,
+    #ff334f 72deg,
+    transparent 73deg,
+    transparent 206deg,
+    #ff334f 207deg,
+    #ff334f 262deg,
+    transparent 263deg,
+    transparent 360deg
+  );
+
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+
+  filter: drop-shadow(0 0 12px rgba(255, 51, 79, 0.85));
+}
+
+/* Arco interior */
+.hero-core-ring-2 {
+  width: 205px;
+  height: 205px;
+  inset: auto !important;
+  transform: translate(-50%, -50%);
+  animation: coreArcRotateTwo 7s linear infinite;
+}
+
+.hero-core-ring-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 90deg,
+    transparent 0deg,
+    transparent 36deg,
+    #ff334f 37deg,
+    #ff334f 118deg,
+    transparent 119deg,
+    transparent 245deg,
+    #ff334f 246deg,
+    #ff334f 308deg,
+    transparent 309deg,
+    transparent 360deg
+  );
+
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+
+  opacity: 0.9;
+  filter: drop-shadow(0 0 13px rgba(255, 51, 79, 0.72));
+}
+
+@keyframes coreArcRotateOne {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes coreArcRotateTwo {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero-orbit-core {
+    width: 142px;
+    height: 142px;
+  }
+
+  .innova-core-logo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .hero-core-ring-1 {
+    width: 152px;
+    height: 152px;
+  }
+
+  .hero-core-ring-2 {
+    width: 126px;
+    height: 126px;
+  }
+
+  .hero-core-ring-1::before,
+  .hero-core-ring-2::before {
+    -webkit-mask:
+      radial-gradient(
+        farthest-side,
+        transparent calc(100% - 3px),
+        #000 calc(100% - 2px)
+      );
+    mask:
+      radial-gradient(
+        farthest-side,
+        transparent calc(100% - 3px),
+        #000 calc(100% - 2px)
+      );
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-orbit-core {
+    width: 128px;
+    height: 128px;
+  }
+
+  .innova-core-logo {
+    width: 74px;
+    height: 74px;
+  }
+
+  .hero-core-ring-1 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-core-ring-2 {
+    width: 116px;
+    height: 116px;
+  }
+}
+/* =========================================================
+   FIX FINAL LOGO CENTRAL HERO
+   Logo sin fondo negro + arcos centrados
+   ========================================================= */
+
+.hero-orbit-core {
+  position: relative !important;
+  z-index: 7 !important;
+  width: 230px !important;
+  height: 230px !important;
+  border-radius: 999px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  animation: none !important;
+}
+
+/* Desactiva los anillos viejos si quedaron en el CSS */
+.hero-core-ring,
+.hero-core-ring-1,
+.hero-core-ring-2 {
+  display: none !important;
+}
+
+.innova-logo-orbit {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+/* Arco rojo exterior */
+.innova-logo-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background:
+    conic-gradient(
+      from 20deg,
+      transparent 0deg,
+      transparent 32deg,
+      #ff334f 34deg,
+      #ff334f 112deg,
+      transparent 116deg,
+      transparent 218deg,
+      #ff334f 222deg,
+      #ff334f 286deg,
+      transparent 292deg,
+      transparent 360deg
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  filter: drop-shadow(0 0 12px rgba(255, 51, 79, 0.85));
+  animation: logoArcRotateOne 8s linear infinite;
+}
+
+/* Arco rojo interior */
+.innova-logo-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 999px;
+  background:
+    conic-gradient(
+      from 160deg,
+      transparent 0deg,
+      transparent 48deg,
+      #ff334f 52deg,
+      #ff334f 128deg,
+      transparent 132deg,
+      transparent 230deg,
+      #ff334f 234deg,
+      #ff334f 286deg,
+      transparent 292deg,
+      transparent 360deg
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(255, 51, 79, 0.7));
+  animation: logoArcRotateTwo 11s linear infinite;
+}
+
+.innova-core-logo {
+  position: relative;
+  z-index: 3;
+  width: 126px;
+  height: 126px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 18px rgba(255, 51, 79, 0.42))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.12));
+}
+
+@keyframes logoArcRotateOne {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logoArcRotateTwo {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-orbit-core {
+    width: 142px !important;
+    height: 142px !important;
+  }
+
+  .innova-logo-orbit {
+    width: 138px;
+    height: 138px;
+  }
+
+  .innova-logo-orbit::after {
+    inset: 13px;
+  }
+
+  .innova-core-logo {
+    width: 78px;
+    height: 78px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-orbit-core {
+    width: 128px !important;
+    height: 128px !important;
+  }
+
+  .innova-logo-orbit {
+    width: 124px;
+    height: 124px;
+  }
+
+  .innova-logo-orbit::after {
+    inset: 12px;
+  }
+
+  .innova-core-logo {
+    width: 70px;
+    height: 70px;
+  }
+} 

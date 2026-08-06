@@ -1,0 +1,21 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="whiteGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.25 0"></feColorMatrix>
+      <feBlend in="SourceGraphic"></feBlend>
+    </filter>
+
+    <filter id="redGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1  0 0 0 0 0.2  0 0 0 0 0.32  0 0 0 0.5 0"></feColorMatrix>
+      <feBlend in="SourceGraphic"></feBlend>
+    </filter>
+  </defs>
+
+  <!-- Trazo blanco superior/izquierdo -->
+  <path d="M42 158V80C42 45 83 28 111 56L158 103" stroke="#ffffff" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" filter="url(#whiteGlow)"></path>
+
+  <!-- Trazo rojo inferior/derecho -->
+  <path d="M70 124L110 164C139 193 178 171 178 132V52" stroke="#ff334f" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" filter="url(#redGlow)"></path>
+</svg>
