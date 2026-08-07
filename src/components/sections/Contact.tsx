@@ -1,32 +1,17 @@
-import { Send } from "lucide-react";
-import FadeSection from "../ui/FadeSection";
-import { whatsappLink } from "../../data/contact";
+import SocialMedia from "../ui/SocialMedia";
+import { socialLinks } from "../../data/contact";
 
 function Contact() {
   return (
-    <FadeSection id="contacto">
-      <div className="hero-card">
-        <Send size={80} />
+    <section id="contacto" className="social-strip">
+      <div className="social-strip-inner">
+        <span className="social-strip-line"></span>
 
-        <h3>¿Tenés una idea?</h3>
+        <p>Seguinos en redes</p>
 
-        <p>
-          Contame tu proyecto y trabajemos juntos para llevar tu negocio al
-          siguiente nivel.
-        </p>
-
-        <br />
-
-        <a
-         className="btn-primary"
-         href={whatsappLink}
-         target="_blank"
-         rel="noopener noreferrer"
-         >
-         Hablemos por WhatsApp
-        </a> 
+        <SocialMedia items={socialLinks} className="social-media-compact" />
       </div>
-    </FadeSection>
+    </section>
   );
 }
 

@@ -1,5 +1,5 @@
 import Navbar from "./components/layout/Navbar";
-
+import Contact from "./components/sections/Contact"; 
 import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Projects from "./components/sections/Projects";
@@ -24,8 +24,8 @@ function App() {
      
      <Technologies />
 
-      
-    </main>
+    <Contact />
+  </main>
   );
 }
 

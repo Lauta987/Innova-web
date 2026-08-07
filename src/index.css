@@ -1571,7 +1571,7 @@ nav a:hover {
 
   .hero {
     grid-template-columns: 1fr;
-    padding: 50px 0;
+    padding: 7.2rem 5.5% 4.5rem;
   }
 
   .hero-orbit-system {
@@ -2535,10 +2535,10 @@ nav a:hover {
 }
 
 .project-fan-shell {
-  width: min(1480px, calc(100vw - 20px));
+  width: min(1480px, 100%);
   margin-top: 2.75rem;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: 0;
+  transform: none;
   overflow: hidden;
 }
 
@@ -3009,7 +3009,7 @@ nav a:hover {
   }
 
   .project-fan-shell {
-    width: 100vw;
+    width: 100%;
     margin-top: 1.8rem;
   }
 
@@ -3084,9 +3084,6 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  max-width: 100%;
-}
 
 /* NAVBAR MOBILE */
 
@@ -3359,7 +3356,7 @@ body {
   }
 
   .project-fan-shell {
-    width: 100vw;
+    width: 100%;
     margin-top: 1.7rem;
   }
 
@@ -3557,231 +3554,6 @@ body {
   }
 } 
 /* =========================================================
-   HERO CENTRO — LOGO SIN FONDO + ARCOS ROJOS
-   Bloque final corregido para reemplazar INNOVA/MÉTODO por SVG
-   ========================================================= */
-
-.hero-orbit-core {
-  position: relative;
-  z-index: 7;
-  width: 230px;
-  height: 230px;
-  border-radius: 999px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  overflow: visible;
-  animation: none !important;
-}
-
-.hero-orbit-core h3,
-.hero-orbit-core > span,
-.innova-symbol,
-.symbol-left,
-.symbol-right {
-  display: none !important;
-}
-
-.innova-core-logo {
-  position: relative;
-  z-index: 5;
-  width: 138px;
-  height: 138px;
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 0 18px rgba(255, 51, 79, 0.44))
-    drop-shadow(0 0 20px rgba(255, 255, 255, 0.14));
-}
-
-/* Arcos rojos alrededor del logo */
-.hero-core-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 999px;
-  pointer-events: none;
-  z-index: 3;
-  border: none !important;
-  filter: none !important;
-}
-
-/* Arco exterior */
-.hero-core-ring-1 {
-  width: 245px;
-  height: 245px;
-  inset: auto !important;
-  transform: translate(-50%, -50%);
-  animation: coreArcRotateOne 9s linear infinite;
-}
-
-.hero-core-ring-1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 14deg,
-    #ff334f 15deg,
-    #ff334f 72deg,
-    transparent 73deg,
-    transparent 206deg,
-    #ff334f 207deg,
-    #ff334f 262deg,
-    transparent 263deg,
-    transparent 360deg
-  );
-
-  -webkit-mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 4px),
-      #000 calc(100% - 3px)
-    );
-  mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 4px),
-      #000 calc(100% - 3px)
-    );
-
-  filter: drop-shadow(0 0 12px rgba(255, 51, 79, 0.85));
-}
-
-/* Arco interior */
-.hero-core-ring-2 {
-  width: 205px;
-  height: 205px;
-  inset: auto !important;
-  transform: translate(-50%, -50%);
-  animation: coreArcRotateTwo 7s linear infinite;
-}
-
-.hero-core-ring-2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: conic-gradient(
-    from 90deg,
-    transparent 0deg,
-    transparent 36deg,
-    #ff334f 37deg,
-    #ff334f 118deg,
-    transparent 119deg,
-    transparent 245deg,
-    #ff334f 246deg,
-    #ff334f 308deg,
-    transparent 309deg,
-    transparent 360deg
-  );
-
-  -webkit-mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 4px),
-      #000 calc(100% - 3px)
-    );
-  mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 4px),
-      #000 calc(100% - 3px)
-    );
-
-  opacity: 0.9;
-  filter: drop-shadow(0 0 13px rgba(255, 51, 79, 0.72));
-}
-
-@keyframes coreArcRotateOne {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes coreArcRotateTwo {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .hero-orbit-core {
-    width: 142px;
-    height: 142px;
-  }
-
-  .innova-core-logo {
-    width: 82px;
-    height: 82px;
-  }
-
-  .hero-core-ring-1 {
-    width: 152px;
-    height: 152px;
-  }
-
-  .hero-core-ring-2 {
-    width: 126px;
-    height: 126px;
-  }
-
-  .hero-core-ring-1::before,
-  .hero-core-ring-2::before {
-    -webkit-mask:
-      radial-gradient(
-        farthest-side,
-        transparent calc(100% - 3px),
-        #000 calc(100% - 2px)
-      );
-    mask:
-      radial-gradient(
-        farthest-side,
-        transparent calc(100% - 3px),
-        #000 calc(100% - 2px)
-      );
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-orbit-core {
-    width: 128px;
-    height: 128px;
-  }
-
-  .innova-core-logo {
-    width: 74px;
-    height: 74px;
-  }
-
-  .hero-core-ring-1 {
-    width: 140px;
-    height: 140px;
-  }
-
-  .hero-core-ring-2 {
-    width: 116px;
-    height: 116px;
-  }
-}
-/* =========================================================
    FIX FINAL LOGO CENTRAL HERO
    Logo sin fondo negro + arcos centrados
    ========================================================= */
@@ -3963,5 +3735,348 @@ body {
   .innova-core-logo {
     width: 70px;
     height: 70px;
+  }
+} 
+/* =========================================================
+   SOCIAL MEDIA INNOVA
+   ========================================================= */
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social-media-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.social-media-link {
+  --social-color: #ff334f;
+
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.28),
+    inset 0 0 18px rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.social-media-link:hover {
+  transform: translateY(-6px) scale(1.04);
+  border-color: var(--social-color);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.36),
+    0 0 32px color-mix(in srgb, var(--social-color), transparent 55%);
+}
+
+.social-media-fill {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--social-color);
+  transition: height 0.32s ease;
+}
+
+.social-media-link:hover .social-media-fill {
+  height: 100%;
+}
+
+.social-media-icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.social-media-link:hover .social-media-icon {
+  transform: scale(1.08);
+}
+
+.social-media-tooltip {
+  --social-color: #ff334f;
+
+  position: absolute;
+  left: 50%;
+  bottom: -44px;
+  transform: translateX(-50%) translateY(6px);
+
+  padding: 0.42rem 0.7rem;
+  border-radius: 10px;
+
+  background: var(--social-color);
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-media-tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  transform: translateX(-50%) rotate(45deg);
+
+  width: 10px;
+  height: 10px;
+  background: var(--social-color);
+}
+
+.social-media-item:hover .social-media-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 520px) {
+  .social-media {
+    gap: 0.75rem;
+  }
+
+  .social-media-link {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-media-tooltip {
+    display: none;
+  }
+} 
+/* =========================================================
+   SOCIAL STRIP — REDES INNOVA
+   ========================================================= */
+
+.social-strip {
+  width: 100%;
+  padding: 1.15rem 7%;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 86% 50%, rgba(255, 51, 79, 0.16), transparent 22%),
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 14, 0.98),
+      rgba(35, 8, 14, 0.88),
+      rgba(10, 10, 14, 0.98)
+    );
+
+  border-top: 1px solid rgba(255, 51, 79, 0.12);
+  border-bottom: 1px solid rgba(255, 51, 79, 0.12);
+}
+
+.social-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 51, 79, 0.16) 43%, transparent 44%),
+    linear-gradient(165deg, transparent 0%, transparent 60%, rgba(255, 51, 79, 0.12) 61%, transparent 62%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.social-strip-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1150px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-strip-line {
+  width: 2px;
+  height: 28px;
+  border-radius: 999px;
+  background: #ff334f;
+  box-shadow: 0 0 14px rgba(255, 51, 79, 0.75);
+}
+
+.social-strip p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Versión compacta de los iconos */
+.social-media-compact {
+  gap: 0.65rem;
+}
+
+.social-media-compact .social-media-link {
+  width: 34px;
+  height: 34px;
+  border-color: rgba(255, 51, 79, 0.28);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.24),
+    0 0 12px rgba(255, 51, 79, 0.08);
+}
+
+.social-media-compact .social-media-link:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+.social-media-compact .social-media-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.social-media-compact .social-media-tooltip {
+  bottom: -34px;
+  font-size: 0.68rem;
+  padding: 0.32rem 0.55rem;
+}
+
+.social-media-compact .social-media-item:hover .social-media-tooltip {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 600px) {
+  .social-strip {
+    padding: 1rem 1.1rem;
+  }
+
+  .social-strip-inner {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .social-strip p {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  .social-media-compact {
+    gap: 0.5rem;
+  }
+
+  .social-media-compact .social-media-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-media-compact .social-media-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =========================================================
+   FIX FINAL — SCROLL ÚNICO + ANCHO SEGURO
+   ========================================================= */
+
+html {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+#root,
+.page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.hero {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-orbit-system {
+  max-width: 100%;
+}
+
+.project-fan-shell {
+  width: min(1480px, 100%);
+  margin-left: 0;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .project-fan-shell {
+    width: 100%;
+  }
+
+  .project-stack-stage {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    overflow: hidden;
+  }
+
+  .hero-orbit-system {
+    overflow: visible;
+    max-width: 100%;
+  }
+
+  .orbit-label-track,
+  .orbit-tag,
+  .orbit-tag-orbiter {
+    max-width: calc(100vw - 24px);
   }
 } 
