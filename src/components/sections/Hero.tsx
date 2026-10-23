@@ -1,3 +1,4 @@
+
 import {
   Code2,
   PencilRuler,
@@ -25,16 +26,21 @@ function Hero() {
       </div>
 
       <div className="hero-content">
-        <span className="eyebrow">IMPULSAMOS TU NEGOCIO</span>
+        <span className="eyebrow">
+          IMPULSAMOS TU NEGOCIO
+        </span>
 
         <h1>
-          Llevamos tu negocio al siguiente nivel con <span>tecnología</span>
+          Desarrollamos <span>páginas web</span> para
+          impulsar tu negocio
         </h1>
 
         <p>
-          Desarrollamos páginas web y sistemas a medida para que empresas y
-          emprendimientos crezcan, automaticen procesos y generen más
-          oportunidades.
+          Desde Venado Tuerto, Santa Fe, creamos páginas
+          web y soluciones digitales a medida para empresas
+          y emprendimientos de toda Argentina. Te ayudamos
+          a mostrar tus servicios, recibir consultas y
+          hacer crecer tu negocio.
         </p>
 
         <div className="hero-buttons">
@@ -59,7 +65,7 @@ function Hero() {
             <img
               className="innova-core-logo"
               src="/innova-symbol.svg"
-              alt="Logo Innova"
+              alt="INNOVA Soluciones Digitales"
             />
           </div>
         </div>
@@ -116,4 +122,5 @@ function Hero() {
   );
 }
 
-export default Hero; 
+export default Hero;
+ 

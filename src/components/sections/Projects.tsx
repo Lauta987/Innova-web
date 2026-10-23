@@ -1,3 +1,4 @@
+
 import {
   Bike,
   CalendarDays,
@@ -5,7 +6,9 @@ import {
   Leaf,
   Rocket,
 } from "lucide-react";
+
 import FadeSection from "../ui/FadeSection";
+
 import ProjectCardStack, {
   type ProjectCardStackItem,
 } from "../ui/ProjectCardStack";
@@ -15,7 +18,7 @@ const projects: ProjectCardStackItem[] = [
     id: "bicicleteria",
     title: "Gestión de Bicicletería",
     description:
-      "Sistema para registrar clientes, bicicletas, reparaciones y estados de cada trabajo.",
+      "Sistema de gestión para bicicleterías que organiza clientes, bicicletas y reparaciones, con seguimiento de trabajos y comunicación por WhatsApp.",
     status: "EN DESARROLLO",
     imageSrc: "/projects/bicicleteria-cover.webp",
     imageAlt: "Panel del sistema de gestión para bicicletería",
@@ -55,7 +58,7 @@ const projects: ProjectCardStackItem[] = [
     id: "harmonia",
     title: "Harmonia Aromas",
     description:
-      "Catálogo web, panel administrativo y experiencia instalable para gestionar productos de forma independiente.",
+      "Desarrollo de sitio web y catálogo digital de velas aromáticas, con panel de administración de productos y pedidos mediante WhatsApp.",
     status: "WEB + ADMIN + PWA",
     imageSrc: "/projects/harmonia-cover.webp",
     imageAlt: "Sitio web y panel de administración de Harmonia Aromas",
@@ -101,7 +104,7 @@ const projects: ProjectCardStackItem[] = [
     id: "gymstart",
     title: "GymStart",
     description:
-      "Una experiencia premium para alumnos y herramientas simples para administrar rutinas y progreso.",
+      "Aplicación para gimnasios con rutinas personalizadas, seguimiento del progreso de los alumnos y herramientas de gestión para entrenadores.",
     status: "SAAS PARA GIMNASIOS",
     imageSrc: "/projects/gymstart-card.webp",
     imageAlt: "Aplicación de alumnos y panel administrativo de GymStart",
@@ -153,7 +156,7 @@ const projects: ProjectCardStackItem[] = [
     id: "spoton",
     title: "SpotOn",
     description:
-      "Plataforma de turnos que centraliza disponibilidad, reservas y cancelaciones de canchas.",
+      "Sistema de turnos y reservas para canchas deportivas, con consulta de horarios disponibles, confirmación y cancelación de reservas.",
     status: "PROYECTO ACADÉMICO",
     imageSrc: "/projects/spoton-cover.webp",
     imageAlt: "Panel del sistema de reservas SpotOn",
@@ -207,16 +210,20 @@ function Projects() {
   return (
     <FadeSection id="proyectos">
       <div className="projects-fan-intro">
-        <span className="eyebrow">PROYECTOS</span>
+        <span className="eyebrow">
+          NUESTROS PROYECTOS
+        </span>
 
         <h2>
-          Sistemas que resuelven
+          Páginas web y sistemas que resuelven
           <span> problemas reales</span>
         </h2>
 
         <p>
-          Productos digitales creados para mejorar la experiencia de cada
-          negocio y simplificar su gestión.
+          Conocé algunos de nuestros proyectos de desarrollo
+          web y software a medida. Creamos catálogos digitales,
+          aplicaciones y sistemas de gestión pensados para
+          empresas y emprendimientos.
         </p>
       </div>
 
@@ -230,4 +237,5 @@ function Projects() {
   );
 }
 
-export default Projects; 
+export default Projects;
+ 

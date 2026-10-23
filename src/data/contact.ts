@@ -1,19 +1,27 @@
-export const whatsappNumber = "543462216689";
+
+export const whatsappNumber = (
+  import.meta.env.VITE_WHATSAPP_NUMBER || ""
+).replace(/\D/g, "");
 
 export const whatsappMessage =
   "Hola, quiero consultar por una página web o solución digital para mi negocio.";
 
-export const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+export const whatsappLink = whatsappNumber
+  ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+  : "#contacto";
 
-export const instagramLink = "https://www.instagram.com/innova.oficial1/";
-export const innovaEmail = "innovasolucionesdigitales@gmail.com";
-export const emailLink = `mailto:${innovaEmail}?subject=${encodeURIComponent(
-  "Consulta por solución digital"
-)}&body=${encodeURIComponent(
-  "Hola, quiero consultar por una página web o solución digital para mi negocio."
-)}`;
+export const instagramLink =
+  "https://www.instagram.com/innova.oficial1/";
+
+export const innovaEmail =
+  "innovasolucionesdigitales@gmail.com";
+
+export const emailLink =
+  `mailto:${innovaEmail}?subject=${encodeURIComponent(
+    "Consulta por solución digital"
+  )}&body=${encodeURIComponent(
+    "Hola, quiero consultar por una página web o solución digital para mi negocio."
+  )}`;
 
 export const socialLinks = [
   {
@@ -37,4 +45,5 @@ export const socialLinks = [
     color: "#ff334f",
     type: "email",
   },
-] as const; 
+] as const;
+ 

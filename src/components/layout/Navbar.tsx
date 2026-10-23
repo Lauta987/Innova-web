@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { whatsappLink } from "../../data/contact";
@@ -11,7 +12,11 @@ function Navbar() {
 
   return (
     <header className={isOpen ? "navbar is-open" : "navbar"}>
-      <a className="brand" href="#inicio" onClick={closeMenu}>
+      <a
+        className="brand"
+        href="#inicio"
+        onClick={closeMenu}
+      >
         <div className="logo">IN</div>
 
         <div>
@@ -20,16 +25,22 @@ function Navbar() {
         </div>
       </a>
 
-      <nav className="nav-links" aria-label="Navegación principal">
+      <nav
+        className="nav-links"
+        aria-label="Navegación principal"
+      >
         <a href="#servicios" onClick={closeMenu}>
           Servicios
         </a>
+
         <a href="#proyectos" onClick={closeMenu}>
           Proyectos
         </a>
-        <a href="#sobre-mi" onClick={closeMenu}>
-          Sobre mí
+
+        <a href="#proceso" onClick={closeMenu}>
+          Cómo trabajamos
         </a>
+
         <a href="#contacto" onClick={closeMenu}>
           Contacto
         </a>
@@ -51,13 +62,20 @@ function Navbar() {
           type="button"
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
-          onClick={() => setIsOpen((current) => !current)}
+          onClick={() =>
+            setIsOpen((current) => !current)
+          }
         >
-          {isOpen ? <X size={21} /> : <Menu size={21} />}
+          {isOpen ? (
+            <X size={21} />
+          ) : (
+            <Menu size={21} />
+          )}
         </button>
       </div>
     </header>
   );
 }
 
-export default Navbar; 
+export default Navbar;
+ 
