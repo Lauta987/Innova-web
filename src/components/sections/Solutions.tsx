@@ -4,8 +4,10 @@ import { whatsappNumber } from "../../data/contact";
 import { solutions, solutionFilters, type Solution } from "../../data/solutions";
 import "./Solutions.css";
 
+const solutionsWhatsappNumber = whatsappNumber || "543462216689";
+
 function inquiry(message: string) {
-  return whatsappNumber ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}` : "/#contacto";
+  return `https://wa.me/${solutionsWhatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 function SolutionCard({ item }: { item: Solution }) {
@@ -20,7 +22,7 @@ function SolutionCard({ item }: { item: Solution }) {
       <ul>{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
       <div className="solution-actions">
         {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16}/></a> : <span className="solution-unavailable" aria-label="Demo próximamente">Próximamente</span>}
-        <a className="solution-secondary" href={inquiry(message)} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noopener noreferrer" : undefined}>Quiero una web así <ArrowRight size={16}/></a>
+        <a className="solution-secondary" href={inquiry(message)} target="_blank" rel="noopener noreferrer">Quiero una web así <ArrowRight size={16}/></a>
       </div>
     </div>
   </article>;
@@ -57,7 +59,7 @@ export default function Solutions() {
       <div className="solution-filters" role="group" aria-label="Filtrar soluciones por rubro">{solutionFilters.map(category => <button key={category} type="button" className={filter === category ? "active" : ""} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}</div>
       <div className="solutions-grid">{visible.map(item => <SolutionCard key={item.id} item={item}/>)}</div>
     </section>
-    <section className="solutions-custom"><span className="solutions-eyebrow">HECHA PARA VOS</span><h2>¿TE GUSTÓ UN MODELO? <em>LO ADAPTAMOS A TU NEGOCIO.</em></h2><p>Nuestros modelos son el punto de partida. Adaptamos la identidad visual, el contenido y los datos de tu empresa para que tu página represente tu negocio.</p><div className="solutions-benefits"><div><strong>Tu identidad</strong><span>Tu logo, colores y datos comerciales.</span></div><div><strong>Diseño adaptable</strong><span>Se ve bien en celulares, tablets y computadoras.</span></div><div><strong>Contacto directo</strong><span>Tus clientes pueden consultarte por WhatsApp.</span></div></div><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo los modelos de INNOVA y me gustaría consultar cómo adaptar uno a mi negocio.")} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noopener noreferrer" : undefined}>Consultar por WhatsApp <ArrowRight size={18}/></a></section>
-    <section className="solutions-final"><span className="solutions-eyebrow">HABLEMOS DE TU IDEA</span><h2>¿NO ENCONTRASTE <em>TU RUBRO?</em></h2><p>Contanos qué necesitás y buscamos la mejor solución para vos.</p><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo las soluciones web de INNOVA y me gustaría consultar por una página para mi negocio.")} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noopener noreferrer" : undefined}>Contanos tu idea <ArrowRight size={18}/></a></section>
+    <section className="solutions-custom"><span className="solutions-eyebrow">HECHA PARA VOS</span><h2>¿TE GUSTÓ UN MODELO? <em>LO ADAPTAMOS A TU NEGOCIO.</em></h2><p>Nuestros modelos son el punto de partida. Adaptamos la identidad visual, el contenido y los datos de tu empresa para que tu página represente tu negocio.</p><div className="solutions-benefits"><div><strong>Tu identidad</strong><span>Tu logo, colores y datos comerciales.</span></div><div><strong>Diseño adaptable</strong><span>Se ve bien en celulares, tablets y computadoras.</span></div><div><strong>Contacto directo</strong><span>Tus clientes pueden consultarte por WhatsApp.</span></div></div><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo los modelos de INNOVA y me gustaría consultar cómo adaptar uno a mi negocio.")} target="_blank" rel="noopener noreferrer">Consultar por WhatsApp <ArrowRight size={18}/></a></section>
+    <section className="solutions-final"><span className="solutions-eyebrow">HABLEMOS DE TU IDEA</span><h2>¿NO ENCONTRASTE <em>TU RUBRO?</em></h2><p>Contanos qué necesitás y buscamos la mejor solución para vos.</p><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo las soluciones web de INNOVA y me gustaría consultar por una página para mi negocio.")} target="_blank" rel="noopener noreferrer">Contanos tu idea <ArrowRight size={18}/></a></section>
   </div>;
 }
