@@ -11,6 +11,7 @@ import HeroParticles from "../ui/HeroParticles";
 function Hero() {
   return (
     <motion.section
+      id="inicio"
       className="hero"
       initial={{ opacity: 0, y: 45 }}
       animate={{ opacity: 1, y: 0 }}
