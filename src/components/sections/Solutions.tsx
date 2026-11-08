@@ -28,9 +28,10 @@ function SolutionCard({ item }: { item: Solution }) {
   </article>;
 }
 
-export default function Solutions() {
+export default function Solutions({ embedded = false }: { embedded?: boolean }) {
   const [filter, setFilter] = useState("Todos");
   useEffect(() => {
+    if (embedded) return;
     const title = document.title;
     document.title = "Soluciones Web para Negocios | INNOVA";
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
@@ -43,11 +44,11 @@ export default function Solutions() {
     const values = ["https://www.innovadev.com.ar/soluciones-web", "https://www.innovadev.com.ar/soluciones-web", "Soluciones Web para Negocios | INNOVA", seoDescription];
     tags.forEach((tag, index) => tag?.setAttribute(tag.tagName === "LINK" ? "href" : "content", values[index]));
     return () => { document.title = title; if (meta && description) meta.content = description; tags.forEach((tag, index) => { if (tag && previous[index]) tag.setAttribute(tag.tagName === "LINK" ? "href" : "content", previous[index]); }); };
-  }, []);
+  }, [embedded]);
   const visible = filter === "Todos" ? solutions : solutions.filter(item => item.categories.includes(filter));
-  return <div className="solutions-page">
+  return <div className="solutions-page" id={embedded ? "soluciones" : undefined}>
     <section className="solutions-catalog solutions-catalog-first" id="modelos" aria-labelledby="catalog-title">
-      <div className="solutions-heading"><span className="solutions-eyebrow">EXPLORÁ LAS POSIBILIDADES</span><h1 id="catalog-title">Soluciones para <em>tu rubro.</em></h1><p>Conocé cómo podría verse tu próximo sitio web.</p></div>
+      <div className="solutions-heading"><span className="solutions-eyebrow">EXPLORÁ LAS POSIBILIDADES</span>{embedded ? <h2 id="catalog-title">Soluciones para <em>tu rubro.</em></h2> : <h1 id="catalog-title">Soluciones para <em>tu rubro.</em></h1>}<p>Conocé cómo podría verse tu próximo sitio web.</p></div>
       <div className="solution-filters" role="group" aria-label="Filtrar soluciones por rubro">{solutionFilters.map(category => <button key={category} type="button" className={filter === category ? "active" : ""} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}</div>
       <div className="solutions-grid">{visible.map(item => <SolutionCard key={item.id} item={item}/>)}</div>
     </section>
