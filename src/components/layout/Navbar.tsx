@@ -5,6 +5,8 @@ import { whatsappLink } from "../../data/contact";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const onSolutionsPage = window.location.pathname === "/soluciones-web";
+  const home = onSolutionsPage ? "/" : "";
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -14,7 +16,7 @@ function Navbar() {
     <header className={isOpen ? "navbar is-open" : "navbar"}>
       <a
         className="brand"
-        href="#inicio"
+        href={`${home}#inicio`}
         onClick={closeMenu}
       >
         <div className="logo">IN</div>
@@ -29,19 +31,23 @@ function Navbar() {
         className="nav-links"
         aria-label="Navegación principal"
       >
-        <a href="#servicios" onClick={closeMenu}>
+        <a href={`${home}#servicios`} onClick={closeMenu}>
           Servicios
         </a>
 
-        <a href="#proyectos" onClick={closeMenu}>
+        <a href="/soluciones-web" onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
+          Soluciones Web
+        </a>
+
+        <a href={`${home}#proyectos`} onClick={closeMenu}>
           Proyectos
         </a>
 
-        <a href="#proceso" onClick={closeMenu}>
+        <a href={`${home}#proceso`} onClick={closeMenu}>
           Cómo trabajamos
         </a>
 
-        <a href="#contacto" onClick={closeMenu}>
+        <a href={`${home}#contacto`} onClick={closeMenu}>
           Contacto
         </a>
       </nav>
@@ -49,7 +55,7 @@ function Navbar() {
       <div className="navbar-actions">
         <a
           className="btn-whatsapp"
-          href={whatsappLink}
+          href={onSolutionsPage && whatsappLink === "#contacto" ? "/#contacto" : whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           onClick={closeMenu}

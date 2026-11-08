@@ -6,8 +6,12 @@ import Projects from "./components/sections/Projects";
 import Process from "./components/sections/Process";
 import Technologies from "./components/sections/Technologies";
 import ContactIdea from "./components/sections/ContactIdea";
+import Solutions from "./components/sections/Solutions";
 
 function App() {
+  if (window.location.pathname === "/soluciones-web") {
+    return <main className="page"><Navbar /><Solutions /></main>;
+  }
   return (
     <main className="page">
       <Navbar />
