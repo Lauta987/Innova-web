@@ -16,7 +16,7 @@ function Navbar() {
     <header className={isOpen ? "navbar is-open" : "navbar"}>
       <a
         className="brand"
-        href={`${home}#inicio`}
+        href="/"
         onClick={closeMenu}
       >
         <div className="logo">IN</div>
@@ -31,7 +31,7 @@ function Navbar() {
         className="nav-links"
         aria-label="Navegación principal"
       >
-        <a href={`${home}#inicio`} onClick={closeMenu}>
+        <a href="/" onClick={closeMenu}>
           Inicio
         </a>
 
@@ -39,7 +39,7 @@ function Navbar() {
           Contacto
         </a>
 
-        <a href="/soluciones-web" onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
+        <a href={onSolutionsPage ? "/soluciones-web" : "#soluciones"} onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
           Soluciones por rubro
         </a>
 
