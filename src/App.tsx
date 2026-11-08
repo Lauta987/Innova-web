@@ -18,15 +18,17 @@ function App() {
 
       <Hero />
 
-      <Services />
+      <ContactIdea />
+
+      <Solutions embedded />
 
       <Projects />
 
+      <Services />
+
       <Process />
 
-     <ContactIdea />
-     
-     <Technologies />
+      <Technologies />
 
     <Contact />
   </main>
