@@ -32,16 +32,20 @@ function Hero() {
         </span>
 
         <h1>
-          Desarrollamos <span>páginas web</span> para
-          impulsar tu negocio
+          Hacemos que tu web <span>venda</span> y trabaje por vos.
         </h1>
 
         <p>
-          Desde Venado Tuerto, Santa Fe, creamos páginas
-          web y soluciones digitales a medida para empresas
-          y emprendimientos de toda Argentina. Te ayudamos
-          a mostrar tus servicios, recibir consultas y
-          hacer crecer tu negocio.
+          Combinamos el desarrollo web y posicionamiento SEO en{" "}
+          <span aria-label="Google" style={{ whiteSpace: "nowrap", fontWeight: 700 }}>
+            <span aria-hidden="true" style={{ color: "#4285F4" }}>G</span>
+            <span aria-hidden="true" style={{ color: "#EA4335" }}>o</span>
+            <span aria-hidden="true" style={{ color: "#FBBC05" }}>o</span>
+            <span aria-hidden="true" style={{ color: "#4285F4" }}>g</span>
+            <span aria-hidden="true" style={{ color: "#34A853" }}>l</span>
+            <span aria-hidden="true" style={{ color: "#EA4335" }}>e</span>
+          </span>{" "}
+          para que tu negocio atraiga consultas orgánicamente.
         </p>
 
         <div className="hero-buttons">
