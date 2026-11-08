@@ -46,16 +46,8 @@ export default function Solutions() {
   }, []);
   const visible = filter === "Todos" ? solutions : solutions.filter(item => item.categories.includes(filter));
   return <div className="solutions-page">
-    <section className="solutions-hero" aria-labelledby="solutions-title">
-      <div><span className="solutions-eyebrow">DISEÑOS PENSADOS PARA TU NEGOCIO</span>
-        <h1 id="solutions-title">UNA WEB PARA CADA TIPO DE <em>NEGOCIO.</em></h1>
-        <p>Explorá nuestros modelos de páginas web, conocé sus funcionalidades y descubrí cómo podemos adaptar cada diseño a la identidad de tu negocio.</p>
-        <a className="solution-primary" href="#modelos">Explorar modelos <ArrowRight size={18}/></a>
-      </div>
-      <div className="solutions-hero-visual" aria-hidden="true"><div className="solutions-orbit"/><div className="solutions-symbol">IN</div><span>ESTRATEGIA</span><span>DISEÑO</span><span>DESARROLLO</span></div>
-    </section>
-    <section className="solutions-catalog" id="modelos" aria-labelledby="catalog-title">
-      <div className="solutions-heading"><span className="solutions-eyebrow">EXPLORÁ LAS POSIBILIDADES</span><h2 id="catalog-title">Soluciones para <em>tu rubro.</em></h2><p>Conocé cómo podría verse tu próximo sitio web.</p></div>
+    <section className="solutions-catalog solutions-catalog-first" id="modelos" aria-labelledby="catalog-title">
+      <div className="solutions-heading"><span className="solutions-eyebrow">EXPLORÁ LAS POSIBILIDADES</span><h1 id="catalog-title">Soluciones para <em>tu rubro.</em></h1><p>Conocé cómo podría verse tu próximo sitio web.</p></div>
       <div className="solution-filters" role="group" aria-label="Filtrar soluciones por rubro">{solutionFilters.map(category => <button key={category} type="button" className={filter === category ? "active" : ""} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}</div>
       <div className="solutions-grid">{visible.map(item => <SolutionCard key={item.id} item={item}/>)}</div>
     </section>
