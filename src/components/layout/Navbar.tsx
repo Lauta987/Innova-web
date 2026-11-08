@@ -31,24 +31,24 @@ function Navbar() {
         className="nav-links"
         aria-label="Navegación principal"
       >
-        <a href={`${home}#servicios`} onClick={closeMenu}>
-          Servicios
+        <a href={`${home}#inicio`} onClick={closeMenu}>
+          Inicio
+        </a>
+
+        <a href={`${home}#contacto`} onClick={closeMenu}>
+          Contacto
         </a>
 
         <a href="/soluciones-web" onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
-          Soluciones Web
+          Soluciones por rubro
         </a>
 
         <a href={`${home}#proyectos`} onClick={closeMenu}>
           Proyectos
         </a>
 
-        <a href={`${home}#proceso`} onClick={closeMenu}>
-          Cómo trabajamos
-        </a>
-
-        <a href={`${home}#contacto`} onClick={closeMenu}>
-          Contacto
+        <a href={`${home}#servicios`} onClick={closeMenu}>
+          Nuestros servicios
         </a>
       </nav>
 
