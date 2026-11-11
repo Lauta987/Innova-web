@@ -1,7 +1,5 @@
 
-export const whatsappNumber = (
-  import.meta.env.VITE_WHATSAPP_NUMBER || ""
-).replace(/\D/g, "");
+export const whatsappNumber = "5493462516223";
 
 export const whatsappMessage =
   "Hola, quiero consultar por una página web o solución digital para mi negocio.";

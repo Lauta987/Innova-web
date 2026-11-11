@@ -9,9 +9,8 @@ import {
   UserRound,
 } from "lucide-react";
 
+import { whatsappNumber } from "../../data/contact";
 import "./ContactIdea.css";
-
-const whatsappNumber = "5493462516223";
 
 type ContactForm = {
   name: string;

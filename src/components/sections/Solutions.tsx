@@ -4,10 +4,8 @@ import { whatsappNumber } from "../../data/contact";
 import { solutions, solutionFilters, type Solution } from "../../data/solutions";
 import "./Solutions.css";
 
-const solutionsWhatsappNumber = whatsappNumber || "543462216689";
-
 function inquiry(message: string) {
-  return `https://wa.me/${solutionsWhatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 function SolutionCard({ item }: { item: Solution }) {
