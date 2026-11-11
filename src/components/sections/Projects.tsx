@@ -40,7 +40,7 @@ const projects: ProjectCase[] = [
       "Una web para mostrar sus velas y recibir pedidos por WhatsApp, con un panel de administración para gestionar el catálogo desde el celular.",
     tags: ["Web y catálogo", "Panel de administración", "PWA"],
     href: "https://www.harmoniaaromas.com.ar/",
-    desktopImage: "/projects/harmonia-cover.webp",
+    desktopImage: "/projects/harmonia-desktop-screen.webp",
     mobileImage: "/projects/harmonia-pwa.webp",
     imageAlt: "Web de Harmonia y su panel de administración móvil",
     accent: "#89966f",
