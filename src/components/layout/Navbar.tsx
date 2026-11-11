@@ -19,7 +19,15 @@ function Navbar() {
         href="/"
         onClick={closeMenu}
       >
-        <div className="logo">IN</div>
+        <div className="logo">
+          <img
+            src="/innova-symbol.svg"
+            alt=""
+            width={36}
+            height={36}
+            style={{ display: "block", objectFit: "contain" }}
+          />
+        </div>
 
         <div>
           <h2>INNOVA</h2>
