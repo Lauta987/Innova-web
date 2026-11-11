@@ -9,8 +9,9 @@ import {
   UserRound,
 } from "lucide-react";
 
-import { whatsappNumber } from "../../data/contact";
 import "./ContactIdea.css";
+
+const whatsappNumber = "5493462516223";
 
 type ContactForm = {
   name: string;
@@ -76,13 +77,6 @@ function ContactIdea() {
     const offering = form.offering.trim();
 
     if (!name || !business || !instagram || !whatsapp) return;
-
-    if (!whatsappNumber) {
-      alert(
-        "El contacto por WhatsApp no está configurado. Podés escribirnos desde nuestras redes sociales."
-      );
-      return;
-    }
 
     const message = [
       "Hola, quiero una muestra web gratuita y personalizada para mi negocio.",
