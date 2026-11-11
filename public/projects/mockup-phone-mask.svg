@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1545">
+  <mask id="frame">
+    <rect width="780" height="1545" fill="black"/>
+    <rect x="18" y="13" width="744" height="1509" rx="129" fill="white"/>
+    <rect x="54" y="46" width="675" height="1439" rx="77" fill="black"/>
+    <rect x="283" y="73" width="215" height="64" rx="33" fill="white"/>
+    <rect x="13" y="278" width="8" height="36" rx="3" fill="white"/>
+    <rect x="13" y="342" width="8" height="170" rx="3" fill="white"/>
+    <rect x="13" y="534" width="8" height="101" rx="3" fill="white"/>
+  </mask>
+  <rect width="780" height="1545" fill="white" mask="url(#frame)"/>
+</svg>

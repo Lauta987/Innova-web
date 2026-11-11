@@ -16,7 +16,6 @@ type ProjectCase = {
   mobileImage: string;
   imageAlt: string;
   accent: string;
-  screenAspect: string;
 };
 
 const projects: ProjectCase[] = [
@@ -32,7 +31,6 @@ const projects: ProjectCase[] = [
     mobileImage: "/projects/travel-keen-mobile.webp",
     imageAlt: "Web real de Travel Keen con un paisaje de montaña",
     accent: "#23a9e8",
-    screenAspect: "1.46",
   },
   {
     id: "harmonia",
@@ -46,7 +44,6 @@ const projects: ProjectCase[] = [
     mobileImage: "/projects/harmonia-pwa.webp",
     imageAlt: "Web de Harmonia y su panel de administración móvil",
     accent: "#89966f",
-    screenAspect: "2.16",
   },
 ];
 
@@ -54,22 +51,21 @@ function DevicePreview({ project }: { project: ProjectCase }) {
   return (
     <div
       className="project-case-devices"
-      style={{ "--case-accent": project.accent, "--screen-aspect": project.screenAspect } as CSSProperties}
+      style={{ "--case-accent": project.accent } as CSSProperties}
       aria-label={project.imageAlt}
     >
-      <div className="project-case-laptop" aria-hidden="true">
-        <div className="project-case-laptop-camera" />
-        <div className="project-case-laptop-screen">
+      <div className="project-case-monitor" aria-hidden="true">
+        <div className="project-case-monitor-screen">
           <img src={project.desktopImage} alt="" draggable={false} />
         </div>
-        <div className="project-case-laptop-base" />
+        <img className="project-case-monitor-frame" src="/projects/mockup-imac.webp" alt="" draggable={false} />
       </div>
 
       <div className="project-case-phone" aria-hidden="true">
-        <div className="project-case-phone-notch" />
         <div className="project-case-phone-screen">
           <img src={project.mobileImage} alt="" draggable={false} />
         </div>
+        <img className="project-case-phone-frame" src="/projects/mockup-phone.webp" alt="" draggable={false} />
       </div>
     </div>
   );

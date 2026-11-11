@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1199 957">
+  <mask id="frame">
+    <rect width="1199" height="957" fill="black"/>
+    <rect x="7" y="8" width="1185" height="812" rx="31" fill="white"/>
+    <path d="M474 815h251l17 87 58 42H399l58-42z" fill="white"/>
+    <rect x="399" y="936" width="401" height="14" rx="7" fill="white"/>
+    <rect x="51" y="51" width="1097" height="617" fill="black"/>
+  </mask>
+  <rect width="1199" height="957" fill="white" mask="url(#frame)"/>
+</svg>
