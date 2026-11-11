@@ -49,14 +49,18 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="#servicios" className="btn-primary">
-            Ver servicios
+          <a href="#contacto" className="btn-primary">
+            Quiero mi muestra web gratis
           </a>
 
           <a href="#proyectos" className="btn-secondary">
             Ver proyectos
           </a>
         </div>
+
+        <small className="hero-sample-note">
+          ✓ Personalizada para tu negocio · ✓ Sin compromiso
+        </small>
       </div>
 
       <div className="hero-orbit-system">
