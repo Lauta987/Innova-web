@@ -16,6 +16,7 @@ type ProjectCase = {
   mobileImage: string;
   imageAlt: string;
   accent: string;
+  screenAspect: string;
 };
 
 const projects: ProjectCase[] = [
@@ -27,23 +28,25 @@ const projects: ProjectCase[] = [
       "Una experiencia digital para presentar destinos, generar confianza y convertir visitas en consultas por WhatsApp.",
     tags: ["Catálogo de viajes", "Responsive", "WhatsApp"],
     href: "https://www.travelkeen.com.ar/",
-    desktopImage: "/projects/travel-keen-cover.webp",
+    desktopImage: "/projects/travel-keen-real.webp",
     mobileImage: "/projects/travel-keen-mobile.webp",
-    imageAlt: "Web de Travel Keen mostrando el destino Camboriú",
+    imageAlt: "Web real de Travel Keen con un paisaje de montaña",
     accent: "#23a9e8",
+    screenAspect: "1.46",
   },
   {
     id: "harmonia",
-    eyebrow: "PROYECTO REAL · CATÁLOGO",
+    eyebrow: "PROYECTO REAL · WEB Y ADMINISTRACIÓN",
     title: "Harmonia",
     description:
-      "Un catálogo autogestionable que presenta cada producto con una identidad premium y facilita los pedidos por WhatsApp.",
-    tags: ["Catálogo", "Panel de administración", "PWA"],
+      "Una web para mostrar sus velas y recibir pedidos por WhatsApp, con un panel de administración para gestionar el catálogo desde el celular.",
+    tags: ["Web y catálogo", "Panel de administración", "PWA"],
     href: "https://www.harmoniaaromas.com.ar/",
     desktopImage: "/projects/harmonia-cover.webp",
-    mobileImage: "/projects/harmonia-mobile.webp",
-    imageAlt: "Web y catálogo digital de Harmonia",
+    mobileImage: "/projects/harmonia-pwa.webp",
+    imageAlt: "Web de Harmonia y su panel de administración móvil",
     accent: "#89966f",
+    screenAspect: "2.16",
   },
 ];
 
@@ -51,7 +54,7 @@ function DevicePreview({ project }: { project: ProjectCase }) {
   return (
     <div
       className="project-case-devices"
-      style={{ "--case-accent": project.accent } as CSSProperties}
+      style={{ "--case-accent": project.accent, "--screen-aspect": project.screenAspect } as CSSProperties}
       aria-label={project.imageAlt}
     >
       <div className="project-case-laptop" aria-hidden="true">

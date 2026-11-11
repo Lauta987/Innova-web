@@ -265,7 +265,7 @@
 
 .project-case-laptop-screen {
   overflow: hidden;
-  aspect-ratio: 1.64;
+  aspect-ratio: var(--screen-aspect, 1.64);
   border-radius: 10px 10px 5px 5px;
   background: #050609;
 }
@@ -277,6 +277,10 @@
   object-fit: cover;
   object-position: center;
   user-select: none;
+}
+
+.project-case-laptop-screen img {
+  object-fit: contain;
 }
 
 .project-case-laptop-base {
