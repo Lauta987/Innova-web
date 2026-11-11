@@ -28,7 +28,7 @@ const projects: ProjectCase[] = [
     tags: ["Catálogo de viajes", "Responsive", "WhatsApp"],
     href: "https://www.travelkeen.com.ar/",
     desktopImage: "/projects/travel-keen-real.webp",
-    mobileImage: "/projects/travel-keen-mobile.webp",
+    mobileImage: "/projects/travel-keen-mobile-screen.webp",
     imageAlt: "Web real de Travel Keen con un paisaje de montaña",
     accent: "#23a9e8",
   },
