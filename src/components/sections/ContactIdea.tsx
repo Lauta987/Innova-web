@@ -1,3 +1,4 @@
+import { record } from "../../analytics";
 import { useState, type FormEvent } from "react";
 import {
   ArrowRight,
@@ -91,6 +92,7 @@ function ContactIdea() {
       `https://wa.me/${whatsappNumber}` +
       `?text=${encodeURIComponent(message)}`;
 
+    record("demo_form_whatsapp_click");
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
