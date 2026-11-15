@@ -1,6 +1,6 @@
 // Public project IDs. Environment variables can override them at build time.
 const ga = String(import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-S9J4TDV166').trim()
-const cl = String(import.meta.env.VITE_CLARITY_PROJECT_ID || '').trim()
+const cl = String(import.meta.env.VITE_CLARITY_PROJECT_ID || 'zdw3om6mvj').trim()
 type Command = (...args: unknown[]) => void
 type Clarity = Command & { q?: unknown[][] }
 const w = window as Window & { dataLayer?: unknown[]; gtag?: Command; clarity?: Clarity }
