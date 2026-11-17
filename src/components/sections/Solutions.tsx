@@ -19,7 +19,7 @@ function SolutionCard({ item }: { item: Solution }) {
       <h3>{item.title}</h3><p>{item.description}</p>
       <ul>{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
       <div className="solution-actions">
-        {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16} aria-hidden="true"/></a> : <span className="solution-unavailable" aria-label="Demo próximamente">Próximamente</span>}
+        {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16} aria-hidden="true"/></a> : <span className="solution-unavailable">Próximamente</span>}
         <a className="solution-secondary" href={inquiry(message)} target="_blank" rel="noopener noreferrer">Quiero una web así <ArrowRight size={16} aria-hidden="true"/></a>
       </div>
     </div>
