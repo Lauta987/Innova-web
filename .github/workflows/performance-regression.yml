@@ -1,0 +1,38 @@
+name: Performance and visual regression
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Build both versions
+        run: |
+          npm ci
+          npm run build
+          git worktree add ../innova-baseline origin/main
+          npm ci --prefix ../innova-baseline
+          npm run build --prefix ../innova-baseline
+      - name: Install browser and audit tools
+        run: |
+          npm install --no-save --package-lock=false lighthouse playwright pixelmatch pngjs
+          npx playwright install chromium --with-deps
+      - name: Compare visual, functional, SEO and mobile Lighthouse results
+        run: node scripts/audit-regression.mjs ../innova-baseline
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: innova-regression-report
+          path: regression-results/
+          if-no-files-found: ignore
