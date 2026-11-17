@@ -49,7 +49,7 @@ function Hero() {
 
         <p>
           Combinamos el desarrollo web y posicionamiento SEO en{" "}
-          <span aria-label="Google" style={{ whiteSpace: "nowrap", fontWeight: 700 }}>
+          <span role="img" aria-label="Google" style={{ whiteSpace: "nowrap", fontWeight: 700 }}>
             <span aria-hidden="true" style={{ color: "#4285F4" }}>G</span>
             <span aria-hidden="true" style={{ color: "#EA4335" }}>o</span>
             <span aria-hidden="true" style={{ color: "#FBBC05" }}>o</span>
@@ -87,6 +87,7 @@ function Hero() {
               className="innova-core-logo"
               src="/innova-symbol.svg"
               alt="INNOVA Soluciones Digitales"
+              decoding="async"
             />
           </div>
         </div>
@@ -94,7 +95,7 @@ function Hero() {
         <div className="orbit-label-track orbit-label-track-1">
           <div className="orbit-tag-orbiter orbit-tag-orbiter-1">
             <div className="orbit-tag orbit-tag-1">
-              <Target size={22} />
+              <Target size={22} aria-hidden="true" />
               <span>Estrategia</span>
               <i></i>
             </div>
@@ -104,7 +105,7 @@ function Hero() {
         <div className="orbit-label-track orbit-label-track-2">
           <div className="orbit-tag-orbiter orbit-tag-orbiter-2">
             <div className="orbit-tag orbit-tag-2">
-              <PencilRuler size={22} />
+              <PencilRuler size={22} aria-hidden="true" />
               <span>Diseño</span>
               <i></i>
             </div>
@@ -114,7 +115,7 @@ function Hero() {
         <div className="orbit-label-track orbit-label-track-3">
           <div className="orbit-tag-orbiter orbit-tag-orbiter-3">
             <div className="orbit-tag orbit-tag-3">
-              <Code2 size={22} />
+              <Code2 size={22} aria-hidden="true" />
               <span>Desarrollo</span>
               <i></i>
             </div>
@@ -124,7 +125,7 @@ function Hero() {
         <div className="orbit-label-track orbit-label-track-4">
           <div className="orbit-tag-orbiter orbit-tag-orbiter-4">
             <div className="orbit-tag orbit-tag-4">
-              <SlidersHorizontal size={22} />
+              <SlidersHorizontal size={22} aria-hidden="true" />
               <span>Personalización</span>
               <i></i>
             </div>
