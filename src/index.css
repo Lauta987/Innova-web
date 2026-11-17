@@ -126,6 +126,7 @@ nav a:hover {
 
 .hero {
   min-height: calc(100svh - 70px);
+  animation: heroEnter 0.9s cubic-bezier(0, 0, 0.58, 1) both;
   padding: 2.5rem 7% 3rem;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -137,6 +138,11 @@ nav a:hover {
     radial-gradient(circle at 75% 50%, rgba(255, 51, 79, 0.22), transparent 32%),
     radial-gradient(circle at 20% 20%, rgba(255, 51, 79, 0.12), transparent 28%),
     linear-gradient(135deg, #070b12 0%, #080a10 45%, #14050a 100%);
+}
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(45px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero::before {
@@ -3547,6 +3553,7 @@ body {
 /* REDUCIR ANIMACIONES EN USUARIOS QUE LO PREFIERAN */
 
 @media (prefers-reduced-motion: reduce) {
+  .hero { animation: none; }
   *,
   *::before,
   *::after {
@@ -4088,4 +4095,4 @@ body {
   .orbit-tag-orbiter {
     max-width: calc(100vw - 24px);
   }
-} 
+}
