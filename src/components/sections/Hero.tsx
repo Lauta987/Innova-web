@@ -87,7 +87,6 @@ function Hero() {
               className="innova-core-logo"
               src="/innova-symbol.svg"
               alt="INNOVA Soluciones Digitales"
-              decoding="async"
             />
           </div>
         </div>
