@@ -13,14 +13,14 @@ function SolutionCard({ item }: { item: Solution }) {
   return <article className="solution-card">
     <div className="solution-preview">
       <div className="solution-browser" aria-hidden="true"><i /><i /><i /><span>{item.title}</span></div>
-      {item.image ? <img src={item.image} alt={`Vista previa del inicio de la web para ${item.title}`} loading="lazy" /> : <div className="solution-placeholder"><Monitor size={42} strokeWidth={1.4}/><span>{item.demoUrl ? "Explorá la demo en vivo" : "Vista previa próximamente"}</span></div>}
+      {item.image ? <img src={item.image} alt={`Vista previa del inicio de la web para ${item.title}`} loading="lazy" decoding="async" /> : <div className="solution-placeholder"><Monitor size={42} strokeWidth={1.4}/><span>{item.demoUrl ? "Explorá la demo en vivo" : "Vista previa próximamente"}</span></div>}
     </div>
     <div className="solution-card-content">
       <h3>{item.title}</h3><p>{item.description}</p>
       <ul>{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
       <div className="solution-actions">
-        {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16}/></a> : <span className="solution-unavailable" aria-label="Demo próximamente">Próximamente</span>}
-        <a className="solution-secondary" href={inquiry(message)} target="_blank" rel="noopener noreferrer">Quiero una web así <ArrowRight size={16}/></a>
+        {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16} aria-hidden="true"/></a> : <span className="solution-unavailable">Próximamente</span>}
+        <a className="solution-secondary" href={inquiry(message)} target="_blank" rel="noopener noreferrer">Quiero una web así <ArrowRight size={16} aria-hidden="true"/></a>
       </div>
     </div>
   </article>;
@@ -50,6 +50,6 @@ export default function Solutions({ embedded = false }: { embedded?: boolean }) 
       <div className="solution-filters" role="group" aria-label="Filtrar soluciones por rubro">{solutionFilters.map(category => <button key={category} type="button" className={filter === category ? "active" : ""} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}</div>
       <div className="solutions-grid">{visible.map(item => <SolutionCard key={item.id} item={item}/>)}</div>
     </section>
-    <section className="solutions-custom"><span className="solutions-eyebrow">HECHA PARA VOS</span><h2>¿TE GUSTÓ UN MODELO O NO ENCONTRASTE <em>TU RUBRO?</em></h2><p>Adaptamos cualquiera de estos modelos a la identidad de tu negocio. Si no ves tu rubro, contanos qué necesitás y diseñamos una solución para vos.</p><div className="solutions-benefits"><div><strong>Tu identidad</strong><span>Tu logo, colores y datos comerciales.</span></div><div><strong>Diseño adaptable</strong><span>Se ve bien en celulares, tablets y computadoras.</span></div><div><strong>Contacto directo</strong><span>Tus clientes pueden consultarte por WhatsApp.</span></div></div><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo las soluciones web de INNOVA y me gustaría consultar por una página para mi negocio.")} target="_blank" rel="noopener noreferrer">Contanos tu idea <ArrowRight size={18}/></a></section>
+    <section className="solutions-custom"><span className="solutions-eyebrow">HECHA PARA VOS</span><h2>¿TE GUSTÓ UN MODELO O NO ENCONTRASTE <em>TU RUBRO?</em></h2><p>Adaptamos cualquiera de estos modelos a la identidad de tu negocio. Si no ves tu rubro, contanos qué necesitás y diseñamos una solución para vos.</p><div className="solutions-benefits"><div><strong>Tu identidad</strong><span>Tu logo, colores y datos comerciales.</span></div><div><strong>Diseño adaptable</strong><span>Se ve bien en celulares, tablets y computadoras.</span></div><div><strong>Contacto directo</strong><span>Tus clientes pueden consultarte por WhatsApp.</span></div></div><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo las soluciones web de INNOVA y me gustaría consultar por una página para mi negocio.")} target="_blank" rel="noopener noreferrer">Contanos tu idea <ArrowRight size={18} aria-hidden="true"/></a></section>
   </div>;
 }

@@ -52,20 +52,21 @@ function DevicePreview({ project }: { project: ProjectCase }) {
     <div
       className="project-case-devices"
       style={{ "--case-accent": project.accent } as CSSProperties}
+      role="img"
       aria-label={project.imageAlt}
     >
       <div className="project-case-monitor" aria-hidden="true">
         <div className="project-case-monitor-screen">
-          <img src={project.desktopImage} alt="" draggable={false} />
+          <img src={project.desktopImage} alt="" loading="lazy" decoding="async" draggable={false} />
         </div>
-        <img className="project-case-monitor-frame" src="/projects/mockup-imac.webp" alt="" draggable={false} />
+        <img className="project-case-monitor-frame" src="/projects/mockup-imac.webp" alt="" loading="lazy" decoding="async" draggable={false} />
       </div>
 
       <div className="project-case-phone" aria-hidden="true">
         <div className="project-case-phone-screen">
-          <img src={project.mobileImage} alt="" draggable={false} />
+          <img src={project.mobileImage} alt="" loading="lazy" decoding="async" draggable={false} />
         </div>
-        <img className="project-case-phone-frame" src="/projects/mockup-phone.webp" alt="" draggable={false} />
+        <img className="project-case-phone-frame" src="/projects/mockup-phone.webp" alt="" loading="lazy" decoding="async" draggable={false} />
       </div>
     </div>
   );
@@ -99,7 +100,7 @@ function ProjectCaseCard({
         <h3>{project.title}</h3>
         <p>{project.description}</p>
 
-        <div className="project-case-tags" aria-label="Características">
+        <div className="project-case-tags">
           {project.tags.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
