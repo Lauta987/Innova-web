@@ -13,7 +13,7 @@ function SolutionCard({ item }: { item: Solution }) {
   return <article className="solution-card">
     <div className="solution-preview">
       <div className="solution-browser" aria-hidden="true"><i /><i /><i /><span>{item.title}</span></div>
-      {item.image ? <img src={item.image} alt={`Vista previa del inicio de la web para ${item.title}`} loading="lazy" decoding="async" /> : <div className="solution-placeholder"><Monitor size={42} strokeWidth={1.4}/><span>{item.demoUrl ? "Explorá la demo en vivo" : "Vista previa próximamente"}</span></div>}
+      {item.image ? <img src={item.image} srcSet={item.imageWidth ? `${item.image.replace(/\.webp$/, "-720.webp")} 720w, ${item.image} ${item.imageWidth}w` : undefined} sizes="(max-width: 720px) min(90vw, 500px), (max-width: 1050px) 45vw, 375px" alt={`Vista previa del inicio de la web para ${item.title}`} loading="lazy" decoding="async" /> : <div className="solution-placeholder"><Monitor size={42} strokeWidth={1.4}/><span>{item.demoUrl ? "Explorá la demo en vivo" : "Vista previa próximamente"}</span></div>}
     </div>
     <div className="solution-card-content">
       <h3>{item.title}</h3><p>{item.description}</p>
