@@ -105,7 +105,7 @@ function Technologies() {
       <div className="tech-grid">
         {technologies.map((tech) => (
           <article className="tech-card" key={tech.name}>
-            <div className="tech-icon" style={{ color: tech.color }}>
+            <div className="tech-icon" style={{ color: tech.color }} aria-hidden="true">
               {tech.icon}
             </div>
 
@@ -117,4 +117,4 @@ function Technologies() {
   );
 }
 
-export default Technologies; 
+export default Technologies;

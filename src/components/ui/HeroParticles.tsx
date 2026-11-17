@@ -7,7 +7,7 @@ function HeroParticles() {
   useEffect(() => {
     if (!particlesRef.current) return;
 
-    const animation = animate(".hero-particle", {
+    const animation = animate(particlesRef.current.querySelectorAll(".hero-particle"), {
       translateX: () => `${Math.random() * 80 - 40}px`,
       translateY: () => `${Math.random() * 80 - 40}px`,
       scale: [0.8, 1.4, 0.8],
@@ -19,7 +19,18 @@ function HeroParticles() {
       easing: "easeInOutSine",
     });
 
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncPlayback = () => {
+      if (document.hidden || motionPreference.matches) animation.pause();
+      else animation.resume();
+    };
+    document.addEventListener("visibilitychange", syncPlayback);
+    motionPreference.addEventListener("change", syncPlayback);
+    syncPlayback();
+
     return () => {
+      document.removeEventListener("visibilitychange", syncPlayback);
+      motionPreference.removeEventListener("change", syncPlayback);
       animation.pause();
     };
   }, []);
@@ -40,4 +51,4 @@ function HeroParticles() {
   );
 }
 
-export default HeroParticles; 
+export default HeroParticles;
