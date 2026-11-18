@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ExternalLink, Monitor } from "lucide-react";
+import { ArrowRight, ExternalLink, Layers3, Monitor } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { whatsappNumber } from "../../data/contact";
 import { solutions, solutionFilters, type Solution } from "../../data/solutions";
 import "./Solutions.css";
+import "./SolutionsPricing.css";
 
 function inquiry(message: string) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -47,9 +49,38 @@ export default function Solutions({ embedded = false }: { embedded?: boolean }) 
   return <div className="solutions-page" id={embedded ? "soluciones" : undefined}>
     <section className="solutions-catalog solutions-catalog-first" id="modelos" aria-labelledby="catalog-title">
       <div className="solutions-heading"><span className="solutions-eyebrow">EXPLORÁ LAS POSIBILIDADES</span>{embedded ? <h2 id="catalog-title">Soluciones para <em>tu rubro.</em></h2> : <h1 id="catalog-title">Soluciones para <em>tu rubro.</em></h1>}<p>Conocé cómo podría verse tu próximo sitio web.</p></div>
+      <div className="solutions-pricing" aria-label="Opciones de desarrollo web">
+        <article className="solutions-pricing__card">
+          <span className="solutions-pricing__icon"><Monitor size={26} strokeWidth={1.8} aria-hidden="true" /></span>
+          <div className="solutions-pricing__copy">
+            <h3>Plan mensual</h3>
+            <p>Tu web lista y en funcionamiento</p>
+          </div>
+          <div className="solutions-pricing__price"><span>Desde</span><strong>$60.000<small>/mes</small></strong></div>
+        </article>
+        <article className="solutions-pricing__card">
+          <span className="solutions-pricing__icon"><Layers3 size={26} strokeWidth={1.8} aria-hidden="true" /></span>
+          <div className="solutions-pricing__copy">
+            <h3>Personalización completa</h3>
+            <p>Un sitio 100% a medida para tu negocio</p>
+          </div>
+          <div className="solutions-pricing__price"><span>Desde</span><strong>$200.000</strong></div>
+        </article>
+      </div>
       <div className="solution-filters" role="group" aria-label="Filtrar soluciones por rubro">{solutionFilters.map(category => <button key={category} type="button" className={filter === category ? "active" : ""} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}</div>
       <div className="solutions-grid">{visible.map(item => <SolutionCard key={item.id} item={item}/>)}</div>
+      <div className="solutions-contact-strip">
+        <span className="solutions-contact-strip__icon"><FaWhatsapp aria-hidden="true" /></span>
+        <strong>¿No encontrás tu rubro?</strong>
+        <p>También desarrollamos páginas web adaptadas a otros negocios y profesionales.</p>
+        <a
+          href={whatsappNumber ? inquiry("Hola, ¿cómo estás? No encontré mi rubro entre las webs de muestra y quiero consultar por una página para mi negocio.") : embedded ? "#contacto" : "/#contacto"}
+          target={whatsappNumber ? "_blank" : undefined}
+          rel={whatsappNumber ? "noopener noreferrer" : undefined}
+        >
+          <FaWhatsapp aria-hidden="true" /> Consultanos por tu web <ArrowRight size={17} aria-hidden="true" />
+        </a>
+      </div>
     </section>
-    <section className="solutions-custom"><span className="solutions-eyebrow">HECHA PARA VOS</span><h2>¿TE GUSTÓ UN MODELO O NO ENCONTRASTE <em>TU RUBRO?</em></h2><p>Adaptamos cualquiera de estos modelos a la identidad de tu negocio. Si no ves tu rubro, contanos qué necesitás y diseñamos una solución para vos.</p><div className="solutions-benefits"><div><strong>Tu identidad</strong><span>Tu logo, colores y datos comerciales.</span></div><div><strong>Diseño adaptable</strong><span>Se ve bien en celulares, tablets y computadoras.</span></div><div><strong>Contacto directo</strong><span>Tus clientes pueden consultarte por WhatsApp.</span></div></div><a className="solution-primary" href={inquiry("Hola, ¿cómo estás? Estuve viendo las soluciones web de INNOVA y me gustaría consultar por una página para mi negocio.")} target="_blank" rel="noopener noreferrer">Contanos tu idea <ArrowRight size={18} aria-hidden="true"/></a></section>
   </div>;
 }

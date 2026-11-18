@@ -1,6 +1,5 @@
 
 import {
-  Home, Plane, Shirt, Bike, Car, Grid2X2, ChevronRight,
   Code2,
   PencilRuler,
   SlidersHorizontal,
@@ -8,16 +7,8 @@ import {
 } from "lucide-react";
 import HeroParticles from "../ui/HeroParticles";
 
-import { whatsappNumber } from "../../data/contact";
-
-const rubros = [
-  ["Inmobiliaria", "mi inmobiliaria", Home],
-  ["Turismo", "mi agencia de viajes", Plane],
-  ["Tienda de ropa", "mi tienda de ropa", Shirt],
-  ["Bicicletería", "mi bicicletería", Bike],
-  ["Automotores", "mi concesionaria", Car],
-  ["Otro rubro", "mi negocio", Grid2X2],
-] as const;
+import PricingPlans from "./PricingPlans";
+import "./HeroActions.css";
 
 function Hero() {
   return (
@@ -56,19 +47,13 @@ function Hero() {
           para que tu negocio atraiga consultas orgánicamente.
         </p>
 
-        <section className="demo-rubros" aria-labelledby="demo-title">
-          <style>{`.demo-rubros{margin-top:1.5rem;text-align:left;max-width:34rem}.demo-rubros h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.12}.demo-rubros small{display:block;color:#d4cbd0;margin:.55rem 0 1rem}.demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.demo-grid a{display:flex;align-items:center;gap:.45rem;padding:.6rem .7rem;min-height:46px;border:1px solid #887981;border-radius:8px;background:#100e13;color:white;font-size:.9rem;font-weight:650}.demo-grid svg{flex-shrink:0}.demo-grid a:hover,.demo-grid a:focus-visible{border-color:#ff3958}.demo-grid .arrow{margin-left:auto;color:#ff3958}.demo-projects{display:block;width:fit-content;margin:1.2rem auto 0}.hero .demo-rubros{width:100%}@media(max-width:768px){#inicio .hero-orbit-system,#inicio .scroll-indicator,#inicio::after{display:none}#inicio{min-height:0;height:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:0;padding-bottom:2rem}#inicio .demo-rubros{margin-inline:auto}}`}</style>
-          <h2 id="demo-title">Solicitá gratis una demo de tu sitio web.</h2>
-          <small>Elegí tu rubro y pedí tu demo por WhatsApp.</small>
-          <div className="demo-grid">
-            {rubros.map(([label, negocio, Icon]) => (
-              <a key={label} href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero solicitar una demo gratis personalizada para " + negocio + ".")}`} target="_blank" rel="noopener noreferrer">
-                <Icon size={18} aria-hidden="true" />{label}<ChevronRight className="arrow" size={14} aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-          <a href="#proyectos" className="btn-secondary demo-projects">Ver proyectos reales</a>
-        </section>
+        <nav className="hero-actions" aria-label="Explorar el sitio">
+          <a className="hero-actions__primary" href="#soluciones">Ver soluciones por rubro</a>
+          <a href="#proyectos">Ver proyectos</a>
+          <a className="hero-actions__plans-desktop" href="#planes">Planes</a>
+        </nav>
+
+        <PricingPlans placement="mobile" />
       </div>
 
       <div className="hero-orbit-system">

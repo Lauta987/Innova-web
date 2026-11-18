@@ -7,6 +7,7 @@ import Process from "./components/sections/Process";
 import Technologies from "./components/sections/Technologies";
 import ContactIdea from "./components/sections/ContactIdea";
 import Solutions from "./components/sections/Solutions";
+import PricingPlans from "./components/sections/PricingPlans";
 
 function App() {
   if (window.location.pathname === "/soluciones-web") {
@@ -18,9 +19,11 @@ function App() {
 
       <Hero />
 
-      <ContactIdea />
+      <PricingPlans placement="desktop" />
 
       <Solutions embedded />
+
+      <ContactIdea />
 
       <Projects />
 

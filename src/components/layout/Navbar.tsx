@@ -43,12 +43,12 @@ function Navbar() {
           Inicio
         </a>
 
-        <a href={`${home}#contacto`} onClick={closeMenu}>
-          Contacto
-        </a>
-
         <a href={onSolutionsPage ? "/soluciones-web" : "#soluciones"} onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
           Soluciones por rubro
+        </a>
+
+        <a href={`${home}#contacto`} onClick={closeMenu}>
+          Contacto
         </a>
 
         <a href={`${home}#proyectos`} onClick={closeMenu}>
