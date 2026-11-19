@@ -67,11 +67,11 @@ function Projects() {
                 aria-controls="project-showcase-panel"
                 tabIndex={selected === index ? 0 : -1}
                 className={`projects-showcase-tab${selected === index ? " is-active" : ""}`}
+                aria-label={item.name}
                 onClick={() => setSelected(index)}
                 onKeyDown={(event) => onTabKey(event, index)}
               >
                 <img src={item.logo} alt="" loading="lazy" decoding="async" />
-                <span>{item.name}</span>
               </button>
             ))}
           </div>
@@ -81,8 +81,7 @@ function Projects() {
             </div>
             <article className="projects-showcase-details">
               <div className="projects-showcase-brand">
-                <img src={project.logo} alt="" loading="lazy" decoding="async" />
-                <h3>{project.name}</h3>
+                <img src={project.logo} alt={project.name} loading="lazy" decoding="async" />
               </div>
               <p>{project.description}</p>
               <div className="projects-showcase-tags">
