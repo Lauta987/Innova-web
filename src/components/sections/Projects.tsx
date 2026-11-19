@@ -1,147 +1,103 @@
+import { useRef, useState } from "react";
+import type { KeyboardEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
-import type { CSSProperties } from "react";
-
 import FadeSection from "../ui/FadeSection";
 import "./Projects.css";
 
-type ProjectCase = {
-  id: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  tags: string[];
-  href: string;
-  desktopImage: string;
-  mobileImage: string;
-  imageAlt: string;
-  accent: string;
-};
-
-const projects: ProjectCase[] = [
+const projects = [
   {
     id: "travel-keen",
-    eyebrow: "PROYECTO REAL · TURISMO",
-    title: "Travel Keen",
-    description:
-      "Una experiencia digital para presentar destinos, generar confianza y convertir visitas en consultas por WhatsApp.",
-    tags: ["Catálogo de viajes", "Responsive", "WhatsApp"],
+    name: "TRAVEL KEEN",
+    logo: "/projects/travel-keen-logo.webp",
+    mockup: "/projects/travel-keen-showcase.webp",
+    description: "Una experiencia digital para presentar destinos, generar confianza y convertir visitas en consultas por WhatsApp.",
+    tags: ["Catálogo de viajes", "Experiencias", "WhatsApp"],
+    kind: "Sitio institucional",
     href: "https://www.travelkeen.com.ar/",
-    desktopImage: "/projects/travel-keen-real.webp",
-    mobileImage: "/projects/travel-keen-mobile-screen.webp",
-    imageAlt: "Web real de Travel Keen con un paisaje de montaña",
-    accent: "#23a9e8",
+    mockupAlt: "Travel Keen en computadora con Patagonia Soñada y en teléfono con Camboriú",
   },
   {
     id: "harmonia",
-    eyebrow: "PROYECTO REAL · WEB Y ADMINISTRACIÓN",
-    title: "Harmonia",
-    description:
-      "Una web para mostrar sus velas y recibir pedidos por WhatsApp, con un panel de administración para gestionar el catálogo desde el celular.",
+    name: "HARMONIA",
+    logo: "/projects/harmonia-logo.webp",
+    mockup: "/projects/harmonia-showcase.webp",
+    description: "Una web para mostrar sus productos y recibir pedidos por WhatsApp, con un panel de administración para gestionar el catálogo.",
     tags: ["Web y catálogo", "Panel de administración", "PWA"],
+    kind: "Web y sistema de gestión",
     href: "https://www.harmoniaaromas.com.ar/",
-    desktopImage: "/projects/harmonia-desktop-screen.webp",
-    mobileImage: "/projects/harmonia-pwa.webp",
-    imageAlt: "Web de Harmonia y su panel de administración móvil",
-    accent: "#89966f",
+    mockupAlt: "Harmonia Aromas en computadora y teléfono, con su colección navideña",
   },
-];
-
-function DevicePreview({ project }: { project: ProjectCase }) {
-  return (
-    <div
-      className="project-case-devices"
-      style={{ "--case-accent": project.accent } as CSSProperties}
-      role="img"
-      aria-label={project.imageAlt}
-    >
-      <div className="project-case-monitor" aria-hidden="true">
-        <div className="project-case-monitor-screen">
-          <img src={project.desktopImage} alt="" loading="lazy" decoding="async" draggable={false} />
-        </div>
-        <img className="project-case-monitor-frame" src="/projects/mockup-imac.webp" alt="" loading="lazy" decoding="async" draggable={false} />
-      </div>
-
-      <div className="project-case-phone" aria-hidden="true">
-        <div className="project-case-phone-screen">
-          <img src={project.mobileImage} alt="" loading="lazy" decoding="async" draggable={false} />
-        </div>
-        <img className="project-case-phone-frame" src="/projects/mockup-phone.webp" alt="" loading="lazy" decoding="async" draggable={false} />
-      </div>
-    </div>
-  );
-}
-
-function ProjectCaseCard({
-  project,
-  index,
-}: {
-  project: ProjectCase;
-  index: number;
-}) {
-  const reduceMotion = useReducedMotion();
-  const reversed = index % 2 === 1;
-
-  return (
-    <motion.article
-      className={`project-case-card${reversed ? " is-reversed" : ""}`}
-      style={{ "--case-accent": project.accent } as CSSProperties}
-      initial={reduceMotion ? false : { opacity: 0, y: 36 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.22 }}
-    >
-      <div className="project-case-visual">
-        <DevicePreview project={project} />
-      </div>
-
-      <div className="project-case-content">
-        <span className="project-case-eyebrow">{project.eyebrow}</span>
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-
-        <div className="project-case-tags">
-          {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-
-        <a
-          className="project-case-link"
-          href={project.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Conocer el proyecto ${project.title}`}
-        >
-          Conocer el proyecto
-          <ArrowUpRight size={19} aria-hidden="true" />
-        </a>
-      </div>
-    </motion.article>
-  );
-}
+] as const;
 
 function Projects() {
+  const [selected, setSelected] = useState(0);
+  const tabs = useRef<Array<HTMLButtonElement | null>>([]);
+  const project = projects[selected];
+
+  function onTabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    let next: number;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % projects.length;
+    else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + projects.length) % projects.length;
+    else if (event.key === "Home") next = 0;
+    else if (event.key === "End") next = projects.length - 1;
+    else return;
+    event.preventDefault();
+    setSelected(next);
+    tabs.current[next]?.focus();
+  }
+
   return (
     <FadeSection id="proyectos" className="section projects-showcase-section">
-      <div className="projects-showcase-intro">
-        <span className="eyebrow">NUESTROS PROYECTOS</span>
-
-        <h2>
-          Proyectos creados para convertir visitas en
-          <span> oportunidades reales</span>
-        </h2>
-
-        <p>
-          Creamos experiencias digitales pensadas para mostrar mejor cada
-          negocio y generar más consultas.
-        </p>
-      </div>
-
-      <div className="projects-case-list">
-        {projects.map((project, index) => (
-          <ProjectCaseCard key={project.id} project={project} index={index} />
-        ))}
+      <div className="projects-showcase-inner">
+        <div className="projects-showcase-intro">
+          <span className="eyebrow">NUESTROS PROYECTOS</span>
+          <h2>PROYECTOS <span>DESTACADOS</span></h2>
+          <p>Conocé dos proyectos reales que desarrollamos para ayudar a cada negocio a mostrar lo que ofrece y generar consultas.</p>
+        </div>
+        <div className="projects-showcase-layout">
+          <div className="projects-showcase-tabs" role="tablist" aria-label="Elegir proyecto" aria-orientation="vertical">
+            {projects.map((item, index) => (
+              <button
+                key={item.id}
+                ref={(element) => { tabs.current[index] = element; }}
+                id={`project-tab-${item.id}`}
+                type="button"
+                role="tab"
+                aria-selected={selected === index}
+                aria-controls="project-showcase-panel"
+                tabIndex={selected === index ? 0 : -1}
+                className={`projects-showcase-tab${selected === index ? " is-active" : ""}`}
+                onClick={() => setSelected(index)}
+                onKeyDown={(event) => onTabKey(event, index)}
+              >
+                <img src={item.logo} alt="" loading="lazy" decoding="async" />
+                <span>{item.name}</span>
+              </button>
+            ))}
+          </div>
+          <div className="projects-showcase-panel" id="project-showcase-panel" role="tabpanel" aria-labelledby={`project-tab-${project.id}`} key={project.id}>
+            <div className="projects-showcase-visual">
+              <img src={project.mockup} alt={project.mockupAlt} loading="lazy" decoding="async" />
+            </div>
+            <article className="projects-showcase-details">
+              <div className="projects-showcase-brand">
+                <img src={project.logo} alt="" loading="lazy" decoding="async" />
+                <h3>{project.name}</h3>
+              </div>
+              <p>{project.description}</p>
+              <div className="projects-showcase-tags">
+                {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+              <dl className="projects-showcase-facts">
+                <div><dt>Año</dt><dd>2026</dd></div>
+                <div><dt>Tipo</dt><dd>{project.kind}</dd></div>
+              </dl>
+              <a href={project.href} target="_blank" rel="noopener noreferrer">
+                Ver proyecto <ArrowUpRight size={20} aria-hidden="true" />
+              </a>
+            </article>
+          </div>
+        </div>
       </div>
     </FadeSection>
   );
