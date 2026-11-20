@@ -1,0 +1,45 @@
+.tourism-landing { color: #f7f5f7; background: radial-gradient(ellipse at 85% 15%, #00a9c41d, transparent 45%); }
+.tourism-landing * { box-sizing: border-box; }
+.tourism-breadcrumb, .tourism-hero, .tourism-section, .tourism-final, .tourism-footer { width: min(1400px, 92%); margin-inline: auto; }
+.tourism-breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 30px; font-size: 12px; color: #aaa4ad; }
+.tourism-breadcrumb a { color: inherit; text-decoration: none; }
+.tourism-breadcrumb a:hover { color: white; }
+.tourism-hero { display: grid; grid-template-columns: .85fr 1.25fr; align-items: center; gap: 48px; padding-block: 85px 100px; }
+.tourism-eyebrow { color: #29c4dd; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+.tourism-hero h1 { font-size: clamp(38px, 4vw, 64px); line-height: 1.04; letter-spacing: -2px; text-transform: uppercase; margin: 23px 0; font-weight: 900; overflow-wrap: anywhere; }
+.tourism-landing em { color: #20bed5; font-style: normal; }
+.tourism-hero-copy > p, .tourism-heading > p, .tourism-final > p { color: #c5bfc7; font-size: 16px; line-height: 1.8; max-width: 570px; }
+.tourism-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 28px; }
+.tourism-button, .tourism-text-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-size: 13px; font-weight: 700; }
+.tourism-button { background: #13aeca; color: #06151a; border-radius: 8px; padding: 16px 21px; transition: background .2s; }
+.tourism-button:hover { background: #44d9e7; }
+.tourism-text-link { color: white; }
+.tourism-hero-notes { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: #a8a1ac; font-size: 11px; }
+.tourism-hero-notes span::before { content: '✓'; color: #29c4dd; margin-right: 6px; }
+.tourism-preview { margin: 0; min-width: 0; }
+.tourism-preview > a { display: block; border: 1px solid #ffffff26; border-radius: 9px; overflow: hidden; box-shadow: 0 22px 70px #0006, 0 0 65px #00bfd212; }
+.tourism-preview img { width: 100%; height: auto; display: block; }
+.tourism-preview figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 10px; color: #aaa3ad; padding-top: 18px; }
+.tourism-preview figcaption span { display: flex; align-items: center; gap: 7px; }
+.tourism-preview i { height: 5px; width: 5px; border-radius: 50%; background: #29c4dd; }
+.tourism-preview figcaption a, .tourism-footer a { display: inline-flex; align-items: center; gap: 8px; color: #eee; text-decoration: none; }
+.tourism-section { padding-block: 65px; border-top: 1px solid #ffffff14; }
+.tourism-heading h2, .tourism-final h2 { font-size: clamp(28px, 3vw, 44px); line-height: 1.15; letter-spacing: -1px; margin: 17px 0; }
+.tourism-heading > p { max-width: 650px; }
+.tourism-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px 50px; margin-top: 45px; }
+.tourism-features article { border-top: 1px solid #ffffff19; padding-top: 25px; }
+.tourism-features svg { color: #29c4dd; }
+.tourism-landing h3 { font-size: 17px; margin: 16px 0 10px; }
+.tourism-features p, .tourism-process li p, .tourism-faq details p { font-size: 14px; color: #b9b2bf; line-height: 1.8; margin: 0; }
+.tourism-process ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; list-style: none; padding: 20px 0 0; }
+.tourism-process li > span { color: #29c4dd; font-size: 28px; font-weight: 800; }
+.tourism-faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; }
+.tourism-faq details { border-bottom: 1px solid #ffffff20; padding: 20px 0; }
+.tourism-faq summary { cursor: pointer; font-size: 15px; font-weight: 600; }
+.tourism-faq details p { margin-top: 15px; }
+.tourism-final { padding-block: 90px; text-align: center; }
+.tourism-final > p { margin: 20px auto 28px; }
+.tourism-footer { border-top: 1px solid #ffffff19; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 25px; color: #aaa3ad; font-size: 12px; }
+.tourism-landing a:focus-visible, .tourism-landing summary:focus-visible { outline: 2px solid #7beaf2; outline-offset: 5px; }
+@media (max-width: 1050px) { .tourism-hero { grid-template-columns: 1fr; gap: 38px; padding-block: 55px 65px; } .tourism-hero-copy { max-width: 700px; } .tourism-hero h1 { font-size: clamp(38px, 7vw, 64px); } .tourism-features { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .tourism-breadcrumb { font-size: 10px; gap: 8px; } .tourism-hero { padding-top: 40px; } .tourism-hero h1 { letter-spacing: -1.5px; } .tourism-eyebrow { font-size: 10px; letter-spacing: 1.4px; } .tourism-actions { align-items: stretch; flex-direction: column; gap: 20px; } .tourism-hero-notes { gap: 12px; font-size: 10px; } .tourism-features, .tourism-process ol, .tourism-faq { grid-template-columns: 1fr; gap: 28px; } .tourism-section { padding-block: 45px; } .tourism-final { padding-block: 65px; } }
