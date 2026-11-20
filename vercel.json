@@ -16,6 +16,7 @@
   "git": {
     "deploymentEnabled": {
       "revision/inmobiliaria": false
+      ,"revision/turismo": false
     }
   }
 }
