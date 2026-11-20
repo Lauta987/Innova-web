@@ -18,10 +18,10 @@ function SolutionCard({ item }: { item: Solution }) {
       {item.image ? <img src={item.image} srcSet={item.imageWidth ? `${item.image.replace(/\.webp$/, "-720.webp")} 720w, ${item.image} ${item.imageWidth}w` : undefined} sizes="(max-width: 720px) min(90vw, 500px), (max-width: 1050px) 45vw, 375px" alt={`Vista previa del inicio de la web para ${item.title}`} loading="lazy" decoding="async" /> : <div className="solution-placeholder"><Monitor size={42} strokeWidth={1.4}/><span>{item.demoUrl ? "Explorá la demo en vivo" : "Vista previa próximamente"}</span></div>}
     </div>
     <div className="solution-card-content">
-      <h3>{item.title}</h3><p>{item.description}</p>
+      <h3>{item.detailUrl ? <a href={item.detailUrl}>{item.title}</a> : item.title}</h3><p>{item.description}</p>
       <ul>{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
       <div className="solution-actions">
-        {item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16} aria-hidden="true"/></a> : <span className="solution-unavailable">Próximamente</span>}
+        {item.detailUrl ? <a className="solution-primary solution-detail-link" href={item.detailUrl}>Conocer solución <ArrowRight size={16} aria-hidden="true" /></a> : item.demoUrl ? <a className="solution-primary" href={item.demoUrl} target="_blank" rel="noopener noreferrer">Explorar demo <ExternalLink size={16} aria-hidden="true"/></a> : <span className="solution-unavailable">Próximamente</span>}
         <a className="solution-secondary" href={inquiry(message)} target="_blank" rel="noopener noreferrer">Quiero una web así <ArrowRight size={16} aria-hidden="true"/></a>
       </div>
     </div>

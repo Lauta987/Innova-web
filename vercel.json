@@ -1,3 +1,17 @@
 {
-  "rewrites": [{ "source": "/soluciones-web", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/soluciones-web",
+      "destination": "/"
+    },
+    {
+      "source": "/inmobiliaria",
+      "destination": "/"
+    }
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "revision/inmobiliaria": false
+    }
+  }
 }

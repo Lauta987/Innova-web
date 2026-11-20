@@ -9,7 +9,12 @@ import ContactIdea from "./components/sections/ContactIdea";
 import Solutions from "./components/sections/Solutions";
 import PricingPlans from "./components/sections/PricingPlans";
 
+import RealEstate from "./components/sections/RealEstate";
+
 function App() {
+  if (window.location.pathname.replace(/\/$/, "") === "/inmobiliaria") {
+    return <main className="page"><Navbar /><RealEstate /></main>;
+  }
   if (window.location.pathname === "/soluciones-web") {
     return <main className="page"><Navbar /><Solutions /></main>;
   }

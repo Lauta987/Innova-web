@@ -6,7 +6,7 @@ import { whatsappLink } from "../../data/contact";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const onSolutionsPage = window.location.pathname === "/soluciones-web";
-  const home = onSolutionsPage ? "/" : "";
+  const home = window.location.pathname !== "/" ? "/" : "";
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -43,7 +43,7 @@ function Navbar() {
           Inicio
         </a>
 
-        <a href={onSolutionsPage ? "/soluciones-web" : "#soluciones"} onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
+        <a href={home ? "/soluciones-web" : "#soluciones"} onClick={closeMenu} aria-current={onSolutionsPage ? "page" : undefined}>
           Soluciones por rubro
         </a>
 
@@ -63,7 +63,7 @@ function Navbar() {
       <div className="navbar-actions">
         <a
           className="btn-whatsapp"
-          href={onSolutionsPage && whatsappLink === "#contacto" ? "/#contacto" : whatsappLink}
+          href={home && whatsappLink === "#contacto" ? "/#contacto" : whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           onClick={closeMenu}

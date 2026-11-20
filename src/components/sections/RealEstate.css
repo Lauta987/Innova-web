@@ -1,0 +1,45 @@
+.real-estate { color: #f7f5f7; background: radial-gradient(ellipse at 85% 15%, #b6002720, transparent 45%); }
+.real-estate * { box-sizing: border-box; }
+.re-breadcrumb, .re-hero, .re-section, .re-final, .re-footer { width: min(1400px, 92%); margin-inline: auto; }
+.re-breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 30px; font-size: 12px; color: #aaa4ad; }
+.re-breadcrumb a { color: inherit; text-decoration: none; }
+.re-breadcrumb a:hover { color: white; }
+.re-hero { display: grid; grid-template-columns: .85fr 1.25fr; align-items: center; gap: 48px; padding-block: 85px 100px; }
+.re-eyebrow { color: #ff2455; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+.re-hero h1 { font-size: clamp(38px, 4vw, 64px); line-height: 1.04; letter-spacing: -2px; text-transform: uppercase; margin: 23px 0; font-weight: 900; overflow-wrap: anywhere; }
+.real-estate em { color: #ff003f; font-style: normal; }
+.re-hero-copy > p, .re-heading > p, .re-final > p { color: #c5bfc7; font-size: 16px; line-height: 1.8; max-width: 570px; }
+.re-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 28px; }
+.re-button, .re-text-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-size: 13px; font-weight: 700; }
+.re-button { background: #f50040; color: white; border-radius: 8px; padding: 16px 21px; transition: background .2s; }
+.re-button:hover { background: #cc0037; }
+.re-text-link { color: white; }
+.re-hero-notes { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: #a8a1ac; font-size: 11px; }
+.re-hero-notes span::before { content: '✓'; color: #ff2455; margin-right: 6px; }
+.re-preview { margin: 0; min-width: 0; }
+.re-preview > a { display: block; border: 1px solid #ffffff26; border-radius: 9px; overflow: hidden; box-shadow: 0 22px 70px #0006, 0 0 65px #e6002612; }
+.re-preview img { width: 100%; height: auto; display: block; }
+.re-preview figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 10px; color: #aaa3ad; padding-top: 18px; }
+.re-preview figcaption span { display: flex; align-items: center; gap: 7px; }
+.re-preview i { height: 5px; width: 5px; border-radius: 50%; background: #ff003f; }
+.re-preview figcaption a, .re-footer a { display: inline-flex; align-items: center; gap: 8px; color: #eee; text-decoration: none; }
+.re-section { padding-block: 65px; border-top: 1px solid #ffffff14; }
+.re-heading h2, .re-final h2 { font-size: clamp(28px, 3vw, 44px); line-height: 1.15; letter-spacing: -1px; margin: 17px 0; }
+.re-heading > p { max-width: 650px; }
+.re-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px 50px; margin-top: 45px; }
+.re-features article { border-top: 1px solid #ffffff19; padding-top: 25px; }
+.re-features svg { color: #ff2455; }
+.real-estate h3 { font-size: 17px; margin: 16px 0 10px; }
+.re-features p, .re-process li p, .re-faq details p { font-size: 14px; color: #b9b2bf; line-height: 1.8; margin: 0; }
+.re-process ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; list-style: none; padding: 20px 0 0; }
+.re-process li > span { color: #ff2455; font-size: 28px; font-weight: 800; }
+.re-faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; }
+.re-faq details { border-bottom: 1px solid #ffffff20; padding: 20px 0; }
+.re-faq summary { cursor: pointer; font-size: 15px; font-weight: 600; }
+.re-faq details p { margin-top: 15px; }
+.re-final { padding-block: 90px; text-align: center; }
+.re-final > p { margin: 20px auto 28px; }
+.re-footer { border-top: 1px solid #ffffff19; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 25px; color: #aaa3ad; font-size: 12px; }
+.real-estate a:focus-visible, .real-estate summary:focus-visible { outline: 2px solid #ff6089; outline-offset: 5px; }
+@media (max-width: 1050px) { .re-hero { grid-template-columns: 1fr; gap: 38px; padding-block: 55px 65px; } .re-hero-copy { max-width: 700px; } .re-hero h1 { font-size: clamp(38px, 7vw, 64px); } .re-features { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .re-breadcrumb { font-size: 10px; gap: 8px; } .re-hero { padding-top: 40px; } .re-hero h1 { letter-spacing: -1.5px; } .re-eyebrow { font-size: 10px; letter-spacing: 1.4px; } .re-actions { align-items: stretch; flex-direction: column; gap: 20px; } .re-hero-notes { gap: 12px; font-size: 10px; } .re-features, .re-process ol, .re-faq { grid-template-columns: 1fr; gap: 28px; } .re-section { padding-block: 45px; } .re-final { padding-block: 65px; } }

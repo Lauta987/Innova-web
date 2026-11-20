@@ -3,3 +3,9 @@
 .solutions-catalog.solutions-catalog-first{padding-top:110px}
 .solutions-page#soluciones{scroll-margin-top:110px}
 .solutions-custom{padding-bottom:110px}
+
+.solution-card { position: relative; }
+.solution-card h3 a { color: inherit; text-decoration: none; }
+.solution-detail-link::after { content: ""; position: absolute; inset: 0; }
+.solution-card .solution-secondary { position: relative; z-index: 1; }
+.solution-card:has(.solution-detail-link):hover { border-color: #ff174c; }
