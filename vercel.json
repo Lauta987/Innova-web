@@ -11,12 +11,20 @@
     {
       "source": "/turismo",
       "destination": "/"
+    },
+    {
+      "source": "/bicicleteria",
+      "destination": "/"
+    },
+    {
+      "source": "/automotores",
+      "destination": "/"
     }
   ],
   "git": {
     "deploymentEnabled": {
-      "revision/inmobiliaria": false
-      ,"revision/turismo": false
+      "revision/inmobiliaria": false,
+      "revision/turismo": false
     }
   }
 }

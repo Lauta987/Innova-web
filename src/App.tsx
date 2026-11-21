@@ -12,7 +12,13 @@ import PricingPlans from "./components/sections/PricingPlans";
 import RealEstate from "./components/sections/RealEstate";
 import Tourism from "./components/sections/Tourism";
 
+import CommerceLanding from "./components/sections/CommerceLanding";
+
 function App() {
+  const route = window.location.pathname.replace(/\/$/, "");
+  if (route === "/bicicleteria" || route === "/automotores") {
+    return <main className="page"><Navbar /><CommerceLanding kind={route === "/bicicleteria" ? "bicicleterias" : "automotores"} /></main>;
+  }
   if (window.location.pathname.replace(/\/$/, "") === "/inmobiliaria") {
     return <main className="page"><Navbar /><RealEstate /></main>;
   }
